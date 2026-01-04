@@ -1594,325 +1594,118 @@ footer {
 
 
 
-
- 
-
-            
-        .header {
-            text-align: center;
-            margin-bottom: 50px;
-            width: 100%;
-            max-width: 1200px;
+ :root {
+            --text-white: #ffffff;
+            --text-gray: #e0e0e0;
+            --primary-color: #c4b59d;
+            --primary-dark: #a8997a;
         }
 
-        .header h1 {
-            font-size: 3.2rem;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 300% 300%;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .header p {
-            font-size: 1.3rem;
-            color: #b8c1ec;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: #000;
+        } 
 
-        .portfolio-container {
-            width: 100%;
-            max-width: 1400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-
-        .book-container {
+        .hero-slider {
             position: relative;
             width: 100%;
-            max-width: 1100px;
-            margin: 20px auto 50px;
-            perspective: 1500px;
-            transform-style: preserve-3d;
-        }
-
-        .book {
-            width: 100%;
-            height: 600px;
-            position: relative;
-            transform-style: preserve-3d;
-            transform: rotateX(5deg);
-            box-shadow: 
-                0 25px 60px rgba(0, 0, 0, 0.7),
-                0 10px 30px rgba(0, 0, 0, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            border-radius: 5px;
-            background: #0a0a15;
+            height: 100vh;
+            min-height: 100vh;
+            max-height: 100vh;
             overflow: hidden;
-        }
-
-        .page {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            right: 0;
-            backface-visibility: hidden;
-            transform-origin: right;
-            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 
-                inset 0 0 30px rgba(0, 0, 0, 0.3),
-                0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .page::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, 
-                rgba(255,255,255,0.03) 0%, 
-                rgba(255,255,255,0) 30%,
-                rgba(0,0,0,0.2) 100%);
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .page img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .page:hover img {
-            transform: scale(1.03);
-        }
-
-        .page-content {
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 100%;
-            padding: 30px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            color: white;
-            z-index: 3;
-            transform: translateY(5px);
-            opacity: 0;
-            transition: all 0.5s ease 0.3s;
-        }
-
-        .page.active .page-content {
-            transform: translateY(0);
+            margin: 0;
             opacity: 1;
         }
 
-        .page-title {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #fff;
-            font-weight: 700;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .page-desc {
-            font-size: 1rem;
-            opacity: 0.9;
-            line-height: 1.5;
-            max-width: 80%;
-        }
-
-        .page-number {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            background: rgba(255, 255, 255, 0.15);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .hero-track {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            font-weight: bold;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            z-index: 5;
-            transition: all 0.3s ease;
+            width: 2700%; /* 27 * 100% */
+            height: 100%;
+            transition: transform 1s ease-in-out;
         }
 
-        .page.active .page-number {
-            background: rgba(255, 107, 107, 0.9);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: scale(1.1);
+        .slide-card {
+            flex: 0 0 3.7037%; /* 100% / 27 = 3.7037% */
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
         }
 
-        /* الأسهم المحسنة */
-        .arrow {
+        .slide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4));
+        }
+
+        /* أسهم التحكم */
+        .slider-arrows {
             position: absolute;
             top: 50%;
+            left: 0;
+            right: 0;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.15);
-            border: none;
-            cursor: pointer;
-            z-index: 100;
-            width: 70px;
-            height: 70px;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            pointer-events: none;
+        }
+
+        .arrow {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
             color: white;
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            user-select: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .arrow:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+            border-color: var(--primary-color);
         }
 
-        .arrow:active {
-            transform: translateY(-50%) scale(0.95);
-        }
-
-        .arrow:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-            transform: translateY(-50%) scale(1);
-        }
-
-        .arrow.left { 
-            right: -85px; 
-        }
-        
-        .arrow.right { 
-            left: -85px; 
-        }
-
-        .arrow i {
-            transition: transform 0.3s ease;
-        }
-
-        .arrow:hover i {
-            transform: scale(1.2);
-        }
-
-        /* مؤشر الصفحات */
-        .page-indicator {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 40px;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 15px 30px;
-            border-radius: 50px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .page-dots {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .dot.active {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            transform: scale(1.3);
-            box-shadow: 0 0 15px rgba(255, 126, 95, 0.7);
-        }
-
-        .dot:hover {
-            transform: scale(1.2);
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        .page-counter {
-            margin-right: 25px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #b8c1ec;
-            min-width: 100px;
-            text-align: center;
-        }
-
-        /* تذييل الصفحة */
-        .footer {
-            margin-top: 60px;
-            text-align: center;
-            color: #8a94c0;
-            font-size: 1rem;
-            padding: 25px;
-            width: 100%;
-            max-width: 1200px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* تأثيرات للجهات المحمولة */
-        @media (max-width: 1100px) {
-            .arrow.left { right: -70px; }
-            .arrow.right { left: -70px; }
-            .arrow { width: 60px; height: 60px; font-size: 28px; }
-        }
+      
 
         @media (max-width: 768px) {
-            .book { height: 500px; }
-            .header h1 { font-size: 2.5rem; }
-            .header p { font-size: 1.1rem; }
-            .arrow.left { right: -60px; }
-            .arrow.right { left: -60px; }
-            .arrow { width: 55px; height: 55px; font-size: 24px; }
-            .page-title { font-size: 1.5rem; }
-            .page-content { padding: 20px; }
+            .arrow {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .slider-arrows {
+                padding: 0 10px;
+            }
         }
 
-        @media (max-width: 600px) {
-            .book { height: 420px; }
-            .book-container { max-width: 90%; }
-            .arrow.left { right: -50px; }
-            .arrow.right { left: -50px; }
-            .arrow { width: 50px; height: 50px; font-size: 22px; }
-            .page-number { width: 40px; height: 40px; font-size: 1.2rem; top: 15px; left: 15px; }
-        }
 
-        @media (max-width: 480px) {
-            .book { height: 350px; }
-            .arrow { display: none; }
-            .page-indicator { margin-top: 20px; }
-            .page-dots { gap: 8px; }
-        }
+
+
+
+
+
     </style>
 </head>
 
@@ -2092,154 +1885,67 @@ footer {
             <div class="hero-scroll-indicator">
                 <div class="scroll-arrow" onclick="scrollToPortfolio()"></div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
         </section>
   
-            <div class="header">
-        <h1>My Creative Portfolio</h1>
-        <p>Browse through my projects using the interactive page flip effect. Use the arrows to navigate between works.</p>
-    </div>
 
-    <div class="portfolio-container">
-        <section class="book-container">
-            <!-- السهم الأيسر -->
-            <button class="arrow left" id="prevBtn">
-                <i class="fas fa-chevron-right"></i>
-            </button>
 
-            <!-- الكتاب -->
-            <div class="book" id="book">
-                <!-- الصفحات 1-12 -->
-                <div class="page active" data-index="0">
-                    <div class="page-number">1</div>
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="E-commerce Website Design">
-                    <div class="page-content">
-                        <h3 class="page-title">E-commerce Platform</h3>
-                        <p class="page-desc">Complete design and development of a retail platform with secure payment system and enhanced user experience.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="1">
-                    <div class="page-number">2</div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Data Analytics Dashboard">
-                    <div class="page-content">
-                        <h3 class="page-title">Data Analytics Dashboard</h3>
-                        <p class="page-desc">Interactive visual design for data display and analysis with animated charts and real-time reports.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="2">
-                    <div class="page-number">3</div>
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mobile Fitness App">
-                    <div class="page-content">
-                        <h3 class="page-title">Fitness Mobile App</h3>
-                        <p class="page-desc">Comprehensive app for tracking exercises and nutrition with personalized recommendations and progress monitoring.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="3">
-                    <div class="page-number">4</div>
-                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Educational Platform">
-                    <div class="page-content">
-                        <h3 class="page-title">Interactive Learning Platform</h3>
-                        <p class="page-desc">Virtual learning environment with interactive videos, tests, and progress tracking.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="4">
-                    <div class="page-number">5</div>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Brand Design">
-                    <div class="page-content">
-                        <h3 class="page-title">Complete Visual Identity</h3>
-                        <p class="page-desc">Full visual identity design for a startup including logo, colors, and promotional materials.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="5">
-                    <div class="page-number">6</div>
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Corporate Website">
-                    <div class="page-content">
-                        <h3 class="page-title">Corporate Website</h3>
-                        <p class="page-desc">Modern corporate website with CMS integration and responsive design for all devices.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="6">
-                    <div class="page-number">7</div>
-                    <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Social Media App">
-                    <div class="page-content">
-                        <h3 class="page-title">Social Media Application</h3>
-                        <p class="page-desc">Social networking app with real-time messaging, photo sharing, and community features.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="7">
-                    <div class="page-number">8</div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Travel Booking Platform">
-                    <div class="page-content">
-                        <h3 class="page-title">Travel Booking Platform</h3>
-                        <p class="page-desc">Online travel booking system with hotel reservations, flight bookings, and itinerary management.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="8">
-                    <div class="page-number">9</div>
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Project Management Tool">
-                    <div class="page-content">
-                        <h3 class="page-title">Project Management Tool</h3>
-                        <p class="page-desc">Collaborative project management software with task tracking, team communication, and reporting.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="9">
-                    <div class="page-number">10</div>
-                    <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Medical Health App">
-                    <div class="page-content">
-                        <h3 class="page-title">Medical Health Application</h3>
-                        <p class="page-desc">Healthcare app for appointment scheduling, medication reminders, and health monitoring.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="10">
-                    <div class="page-number">11</div>
-                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Restaurant Ordering System">
-                    <div class="page-content">
-                        <h3 class="page-title">Restaurant Ordering System</h3>
-                        <p class="page-desc">Online food ordering and delivery platform with real-time tracking and payment integration.</p>
-                    </div>
-                </div>
-                <div class="page" data-index="11">
-                    <div class="page-number">12</div>
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Real Estate Portal">
-                    <div class="page-content">
-                        <h3 class="page-title">Real Estate Portal</h3>
-                        <p class="page-desc">Property listing and management platform with virtual tours and mortgage calculators.</p>
-                    </div>
-                </div>
-            </div>
 
-            <!-- السهم الأيمن -->
-            <button class="arrow right" id="nextBtn">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-        </section>
 
-        <!-- مؤشر الصفحات -->
-        <div class="page-indicator">
-            <div class="page-counter">
-                <span id="currentPage">1</span> / <span id="totalPages">12</span>
-            </div>
-            <div class="page-dots" id="pageDots">
-                <!-- سيتم إضافة النقاط ديناميكيًا -->
-            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<div class="hero-slider">
+  
+        <div class="hero-track" id="heroTrack">
+            <!-- الشريحة 1 -->
+            <div class="slide-card" style="background-image: url('./img/getCroppedImage\ \(1\).jpg');"></div>
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.42\ AM.jpeg');"></div>
+            <!-- الشريحة 2 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.40.53\ AM.jpeg');"></div>
+            <!-- الشريحة 3 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.41.16\ AM.jpeg');"></div>
+            <!-- الشريحة 4 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.42\ AM\ \(1\).jpeg');"></div>
+            <!-- الشريحة 5 -->            <!-- الشريحة 6 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.43\ AM.jpeg');"></div>
+            <!-- الشريحة 7 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.43\ AM\ \(1\).jpeg');"></div>
+            <!-- الشريحة 8 -->
+            <!-- الشريحة 9 -->
+            <!-- الشريحة 10 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.44\ AM\ \(1\).jpeg');"></div>
+            <!-- الشريحة 11 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.46.21\ AM.jpeg');"></div>
+            <!-- الشريحة 12 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.46.48\ AM.jpeg');"></div>
+            <!-- الشريحة 13 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.47.05\ AM.jpeg');"></div>
+            <!-- الشريحة 14 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.47.26\ AM.jpeg');"></div>
+            <!-- الشريحة 15 -->
+            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.47.46\ AM.jpeg');"></div>
+            <!-- الشريحة 16 -->
+           
+            <div class="slide-card" style="background-image: url('./img/getCroppedImage\ \(1\).jpg');"></div>
         </div>
-    </div>
 
-    <div class="footer">
-        <p>© 2023 My Creative Portfolio | Developed with HTML5, CSS3 and JavaScript</p>
-        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.7;">Use arrows or keyboard keys to navigate between pages</p>
+        <!-- أسهم التحكم -->
+        <div class="slider-arrows">
+            <button class="arrow arrow-prev" id="prevBtn">‹</button>
+            <button class="arrow arrow-next" id="nextBtn">›</button>
+        </div>
     </div>
     </main>
 
@@ -2846,93 +2552,6 @@ function initializeLanguage() {
 
 // ========== PORTFOLIO MODAL FUNCTIONALITY ==========
 
-// بيانات المشاريع
-const projects = {
-    1: {
-        title: "The Hillside Residence",
-        type: "Built Project",
-        price: "$899.00",
-        description: "A stunning contemporary residence seamlessly integrated into its hillside environment. Featuring panoramic views, sustainable materials, and innovative passive design strategies.",
-        features: [
-            "Sustainable materials & construction",
-            "Panoramic mountain views",
-            "Passive solar design",
-            "Smart home integration",
-            "Indoor-outdoor living spaces",
-            "Custom interior finishes"
-        ]
-    },
-    2: {
-        title: "Urban Renewal Concept",
-        type: "Photorealistic Render",
-        price: "$299.00",
-        description: "Visionary concept for urban revitalization, transforming neglected spaces into vibrant community hubs through innovative architectural interventions.",
-        features: [
-            "Photorealistic quality",
-            "Multiple lighting scenarios",
-            "Material studies & options",
-            "Context integration",
-            "Human scale elements",
-            "Presentation-ready format"
-        ]
-    },
-    3: {
-        title: "Lakeside Pavilion",
-        type: "CGI",
-        price: "$499.00",
-        description: "Digital visualization of a serene lakeside pavilion, showcasing the interplay of light, water, and architecture in a tranquil natural setting.",
-        features: [
-            "High-resolution CGI",
-            "Realistic water reflections",
-            "Dynamic lighting simulation",
-            "Material texture studies",
-            "360-degree views",
-            "Animation capability"
-        ]
-    },
-    4: {
-        title: "Commercial Tower Study",
-        type: "Hand-drawn",
-        price: "$199.00",
-        description: "Traditional architectural study exploring form, proportion, and detail through the art of hand drawing and technical illustration.",
-        features: [
-            "Hand-drawn perspectives",
-            "Technical details",
-            "Material annotations",
-            "Scale studies",
-            "Presentation sketches",
-            "Concept development"
-        ]
-    },
-    5: {
-        title: "Residential Complex",
-        type: "AutoCAD Drawing",
-        price: "$399.00",
-        description: "Comprehensive architectural documentation for a mixed-use residential complex, featuring detailed plans, sections, and construction details.",
-        features: [
-            "Complete drawing set",
-            "Layer organization",
-            "Construction details",
-            "Material schedules",
-            "Export-ready files",
-            "Professional standards"
-        ]
-    },
-    6: {
-        title: "3D Printed Cityscape",
-        type: "Scale Model Photography",
-        price: "$599.00",
-        description: "Photographic documentation of a detailed scale model created through advanced 3D printing technologies and traditional model-making techniques.",
-        features: [
-            "Professional photography",
-            "Multiple angles",
-            "Lighting studies",
-            "Context presentation",
-            "Digital retouching",
-            "Print-ready images"
-        ]
-    }
-};
 
 function openProjectModal(projectId) {
     const project = projects[projectId];
@@ -3048,107 +2667,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-// بيانات المشاريع
-const projectsData = {
-    1: {
-        title: "The Hillside Residence",
-        type: "Built Project",
-        price: 0,
-        description: "A contemporary hillside residence featuring innovative structural design that harmonizes with the natural landscape. This project showcases our expertise in sustainable architecture with passive solar design and local material integration.",
-        image: "/img/getCroppedImage(1).jpg",
-        category: "projects",
-        features: [
-            "Sustainable architecture design",
-            "Passive solar orientation",
-            "Local material integration",
-            "Smart home automation",
-            "Natural ventilation system",
-            "Landscape integration"
-        ]
-    },
-    2: {
-        title: "Urban Renewal Concept",
-        type: "Photorealistic Render",
-        price: 0,
-        description: "A photorealistic visualization of urban renewal project transforming neglected urban spaces into vibrant community hubs. This render demonstrates our ability to envision transformative urban design solutions.",
-        image: "/img/getCroppedImage (1) (2).jpg",
-        
-        category: "renders",
-        features: [
-            "Photorealistic quality",
-            "Detailed material textures",
-            "Natural lighting simulation",
-            "Context integration",
-            "Multiple view angles",
-            "Post-processing effects"
-        ]
-    },
-    3: {
-        title: "Lakeside Pavilion",
-        type: "CGI",
-        price: 0,
-        description: "A minimalist lakeside pavilion CGI showcasing clean lines and transparency. This digital model illustrates our approach to creating spaces that blur boundaries between interior and exterior environments.",
-        image: "/img/getCroppedImage (1) (1).jpg",
-        category: "renders",
-        features: [
-            "High-resolution CGI",
-            "Architectural visualization",
-            "Material studies",
-            "Lighting analysis",
-            "3D walkthrough available",
-            "VR compatible"
-        ]
-    },
-    4: {
-        title: "Commercial Tower Study",
-        type: "Hand-drawn",
-        price:0,
-        description: "Hand-drawn architectural study of a commercial tower exploring structural possibilities and aesthetic considerations. This blueprint represents the traditional craftsmanship in architectural design process.",
-        image: "/img/getCroppedImage (1).jpg",
-        category: "blueprints",
-        features: [
-            "Hand-drawn precision",
-            "Technical specifications",
-            "Scale accuracy",
-            "Material annotations",
-            "Structural details",
-            "Professional drafting"
-        ]
-    },
-    5: {
-        title: "Residential Complex",
-        type: "AutoCAD Drawing",
-        price: 0,
-        description: "Detailed AutoCAD drawing of a residential complex showcasing efficient space planning and structural layout. This technical drawing demonstrates our expertise in residential design and planning regulations compliance.",
-        image: "/img/getCroppedImage (2) (2).jpg",
-        category: "blueprints",
-        features: [
-            "AutoCAD precision",
-            "Layer organization",
-            "Dimension accuracy",
-            "Plan and elevation views",
-            "Construction details",
-            "Exportable formats"
-        ]
-    },
-    6: {
-        title: "3D Printed Cityscape",
-        type: "Scale Model Photography",
-        price: 0,
-        description: "Photography of a detailed 3D printed scale model representing an innovative cityscape design. This physical model demonstrates our commitment to tangible representation of architectural concepts.",
-        image: "/img/getCroppedImage (3).jpg",
-        category: "models",
-        features: [
-            "3D printed model",
-            "Scale accuracy 1:100",
-            "High-quality photography",
-            "Multiple angles",
-            "Material representation",
-            "Professional lighting"
-        ]
-    }
-};
 
 // السلة
 let cart = JSON.parse(localStorage.getItem('portfolioCart')) || [];
@@ -3582,150 +3100,160 @@ window.removeFromCart = removeFromCart;
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-            const pages = document.querySelectorAll('.page');
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
-            const book = document.getElementById('book');
-            const currentPageEl = document.getElementById('currentPage');
-            const totalPagesEl = document.getElementById('totalPages');
-            const pageDotsContainer = document.getElementById('pageDots');
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    let currentSlide = 0;
+    const totalSlides = 13; // ⚠️ غير هذا الرقم لـ13 (عدد صورك الفعلي)
+    let autoSlideInterval;
+
+    // عناصر الأزرار
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function updateSlider() {
+        const heroTrack = document.getElementById('heroTrack');
+        const slideWidth = 100 / totalSlides;
+        heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+    }
+
+    function goToNextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide = currentSlide + 1;
+        } else {
+            // إعادة للصورة الأولى بانتقال سلس
+            currentSlide = 0;
             
-            let currentPageIndex = 0;
-            let isAnimating = false;
-            const totalPages = pages.length;
+            // إعادة تعيين السلايدر بدون تأثير
+            const heroTrack = document.getElementById('heroTrack');
+            heroTrack.style.transition = 'none';
+            heroTrack.style.transform = `translateX(0)`;
             
-            // تهيئة مؤشر النقاط
-            function initPageDots() {
-                pageDotsContainer.innerHTML = '';
-                for (let i = 0; i < totalPages; i++) {
-                    const dot = document.createElement('div');
-                    dot.className = i === 0 ? 'dot active' : 'dot';
-                    dot.dataset.index = i;
-                    dot.addEventListener('click', () => goToPage(i));
-                    pageDotsContainer.appendChild(dot);
-                }
-                totalPagesEl.textContent = totalPages;
-            }
-            
-            // تحديث حالة الصفحات - بداية التقليب من اليمين
-            function updatePages() {
-                pages.forEach((page, index) => {
-                    page.classList.remove('active');
-                    
-                    if (index === currentPageIndex) {
-                        page.classList.add('active');
-                        page.style.zIndex = totalPages + 10;
-                        page.style.transform = 'rotateY(0deg)';
-                    } else if (index > currentPageIndex) {
-                        // الصفحات التي لم يتم قلبها بعد (على اليمين)
-                        page.style.zIndex = totalPages - index;
-                        page.style.transform = 'rotateY(0deg)';
-                    } else {
-                        // الصفحات التي تم قلبها (على اليسار)
-                        page.style.zIndex = index;
-                        page.style.transform = 'rotateY(180deg)';
-                    }
-                });
-                
-                // تحديث مؤشر الصفحة
-                currentPageEl.textContent = currentPageIndex + 1;
-                
-                // تحديث النقاط النشطة
-                document.querySelectorAll('.dot').forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentPageIndex);
-                });
-                
-                // تحديث حالة الأزرار
-                prevBtn.disabled = currentPageIndex === 0;
-                nextBtn.disabled = currentPageIndex === totalPages - 1;
-                
-                // الكتاب ثابت بدون دوران
-                book.style.transform = 'rotateX(5deg)';
-            }
-            
-            // الانتقال إلى صفحة محددة
-            function goToPage(index) {
-                if (isAnimating || index === currentPageIndex) return;
-                
-                isAnimating = true;
-                currentPageIndex = index;
-                updatePages();
-                
-                // إعادة تمكين الحركة بعد انتهاء التحريك
-                setTimeout(() => {
-                    isAnimating = false;
-                }, 800);
-            }
-            
-            // الانتقال للصفحة التالية (قلب من اليمين لليسار)
-            function nextPage() {
-                if (currentPageIndex < totalPages - 1 && !isAnimating) {
-                    goToPage(currentPageIndex + 1);
-                }
-            }
-            
-            // الانتقال للصفحة السابقة (قلب من اليسار لليمين)
-            function prevPage() {
-                if (currentPageIndex > 0 && !isAnimating) {
-                    goToPage(currentPageIndex - 1);
-                }
-            }
-            
-            // إضافة مستمعي الأحداث
-            nextBtn.addEventListener('click', nextPage);
-            prevBtn.addEventListener('click', prevPage);
-            
-            // التنقل باستخدام لوحة المفاتيح
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'ArrowRight' || event.key === 'Right') {
-                    prevPage();
-                } else if (event.key === 'ArrowLeft' || event.key === 'Left') {
-                    nextPage();
-                }
-            });
-            
-            // إمكانية السحب على الشاشات التي تدعم اللمس
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            book.addEventListener('touchstart', function(event) {
-                touchStartX = event.changedTouches[0].screenX;
-            }, { passive: true });
-            
-            book.addEventListener('touchend', function(event) {
-                touchEndX = event.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
-            
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-                
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        // سحب لليسار - انتقل للصفحة التالية
-                        nextPage();
-                    } else {
-                        // سحب لليمين - انتقل للصفحة السابقة
-                        prevPage();
-                    }
-                }
-            }
-            
-            // التهيئة
-            initPageDots();
-            updatePages();
-            
-            // تأثير دخول الصفحات بالتتابع
+            // إعادة تفعيل الانتقال
             setTimeout(() => {
-                pages.forEach((page, index) => {
-                    setTimeout(() => {
-                        page.style.opacity = '1';
-                    }, index * 100);
-                });
-            }, 300);
-        });
+                heroTrack.style.transition = 'transform 1s ease-in-out';
+                updateSlider(); // تحديث مرة أخرى للتأكد
+            }, 10);
+            return; // خروج مبكر
+        }
+        updateSlider();
+    }
+
+    function goToPrevSlide() {
+        if (currentSlide > 0) {
+            currentSlide = currentSlide - 1;
+        } else {
+            // إعادة للصورة الأخيرة بانتقال سلس
+            currentSlide = totalSlides - 1;
+            
+            // الانتقال للنهاية مباشرة
+            const heroTrack = document.getElementById('heroTrack');
+            const slideWidth = 100 / totalSlides;
+            heroTrack.style.transition = 'none';
+            heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+            
+            // إعادة تفعيل الانتقال
+            setTimeout(() => {
+                heroTrack.style.transition = 'transform 1s ease-in-out';
+            }, 10);
+            return; // خروج مبكر
+        }
+        updateSlider();
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(goToNextSlide, 6000);
+    }
+
+    function resetAutoSlide() {
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    // تشغيل السلايدر
+    updateSlider();
+    startAutoSlide();
+
+    // أحداث الأزرار
+    prevBtn.addEventListener('click', () => {
+        goToPrevSlide();
+        resetAutoSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        goToNextSlide();
+        resetAutoSlide();
+    });
+
+    // وقف السلايدر عند التمرير فوقه
+    const heroSlider = document.querySelector('.hero-slider');
+    heroSlider.addEventListener('mouseenter', () => {
+        clearInterval(autoSlideInterval);
+    });
+    
+    heroSlider.addEventListener('mouseleave', () => {
+        startAutoSlide();
+    });
+
+    // أحداث لوحة المفاتيح
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') {
+            goToPrevSlide();
+            resetAutoSlide();
+        } else if (e.key === 'ArrowLeft') {
+            goToNextSlide();
+            resetAutoSlide();
+        }
+    });
+});
+
+
+
+
+
+
+
+
+
+function goToNextSlide() {
+    currentSlide++;
+    
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+        // إعادة تعيين فورية للبداية
+        const heroTrack = document.getElementById('heroTrack');
+        heroTrack.style.transition = 'none';
+        heroTrack.style.transform = `translateX(0)`;
+        
+        // إعطاء الوقت لعرض الصورة الأولى
+        setTimeout(() => {
+            heroTrack.style.transition = 'transform 1s ease-in-out';
+        }, 50);
+    }
+    
+    updateSlider();
+}
+
+function goToPrevSlide() {
+    currentSlide--;
+    
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+        // الانتقال فورياً للنهاية
+        const heroTrack = document.getElementById('heroTrack');
+        const slideWidth = 100 / totalSlides;
+        heroTrack.style.transition = 'none';
+        heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+        
+        setTimeout(() => {
+            heroTrack.style.transition = 'transform 1s ease-in-out';
+        }, 50);
+    }
+    
+    updateSlider();
+}
   </script>
 </body>
 
