@@ -1628,7 +1628,7 @@ footer {
             display: flex;
             width: 2700%; /* 27 * 100% */
             height: 100%;
-            transition: transform 1s ease-in-out;
+            transition: transform 0.8s ease-in-out;
         }
 
         .slide-card {
@@ -3099,58 +3099,60 @@ window.removeFromCart = removeFromCart;
 
 
 
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     let currentSlide = 0;
-    const totalSlides = 13; // ⚠️ غير هذا الرقم لـ13 (عدد صورك الفعلي)
+    const totalSlides = 13; // تأكد أن هذا يطابق عدد الصور لديك
     let autoSlideInterval;
 
     // عناصر الأزرار
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const heroTrack = document.getElementById('heroTrack');
+
+    // حساب عرض كل شريحة
+    const slideWidth = 100 / totalSlides;
+
+    // تأكد من عرض المسار الصحيح
+    heroTrack.style.width = `${100 * totalSlides}%`;
 
     function updateSlider() {
-        const heroTrack = document.getElementById('heroTrack');
-        const slideWidth = 100 / totalSlides;
-        heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+        const translateX = -(currentSlide * slideWidth);
+        heroTrack.style.transform = `translateX(${translateX}%)`;
     }
 
     function goToNextSlide() {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide = currentSlide + 1;
-        } else {
-            // إعادة للصورة الأولى بانتقال سلس
+        currentSlide++;
+        
+        if (currentSlide >= totalSlides) {
+            // إعادة للبداية بانتقال سلس
             currentSlide = 0;
             
-            // إعادة تعيين السلايدر بدون تأثير
-            const heroTrack = document.getElementById('heroTrack');
+            // إخفاء الانتقال مؤقتاً للعودة للبداية
             heroTrack.style.transition = 'none';
             heroTrack.style.transform = `translateX(0)`;
             
-            // إعادة تفعيل الانتقال
+            // إعادة تفعيل الانتقال بعد فترة بسيطة
             setTimeout(() => {
                 heroTrack.style.transition = 'transform 1s ease-in-out';
-                updateSlider(); // تحديث مرة أخرى للتأكد
+                // تحديث ليعود للصورة الأولى بعد الانتقال
+                setTimeout(() => {
+                    updateSlider();
+                }, 50);
             }, 10);
-            return; // خروج مبكر
+            return;
         }
+        
         updateSlider();
     }
 
     function goToPrevSlide() {
-        if (currentSlide > 0) {
-            currentSlide = currentSlide - 1;
-        } else {
-            // إعادة للصورة الأخيرة بانتقال سلس
+        currentSlide--;
+        
+        if (currentSlide < 0) {
+            // الانتقال للصورة الأخيرة
             currentSlide = totalSlides - 1;
             
-            // الانتقال للنهاية مباشرة
-            const heroTrack = document.getElementById('heroTrack');
-            const slideWidth = 100 / totalSlides;
+            // الانتقال للنهاية مباشرة بدون انتقال
             heroTrack.style.transition = 'none';
             heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
             
@@ -3158,13 +3160,14 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 heroTrack.style.transition = 'transform 1s ease-in-out';
             }, 10);
-            return; // خروج مبكر
+            return;
         }
+        
         updateSlider();
     }
 
     function startAutoSlide() {
-        autoSlideInterval = setInterval(goToNextSlide, 6000);
+        autoSlideInterval = setInterval(goToNextSlide, 4000); // 4 ثواني بين كل شريحة
     }
 
     function resetAutoSlide() {
@@ -3177,12 +3180,14 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
 
     // أحداث الأزرار
-    prevBtn.addEventListener('click', () => {
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         goToPrevSlide();
         resetAutoSlide();
     });
 
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         goToNextSlide();
         resetAutoSlide();
     });
@@ -3197,63 +3202,53 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     });
 
-    // أحداث لوحة المفاتيح
+    // أحداث لوحة المفاتيح - تم تصحيح الاتجاهات
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') {
+        if (e.key === 'ArrowLeft') { // السهم الأيسر للصورة السابقة
             goToPrevSlide();
             resetAutoSlide();
-        } else if (e.key === 'ArrowLeft') {
+        } else if (e.key === 'ArrowRight') { // السهم الأيمن للصورة التالية
             goToNextSlide();
             resetAutoSlide();
         }
     });
+
+    // إضافة دعم السحب للجوال
+    let startX = 0;
+    let isDragging = false;
+
+    heroSlider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+        clearInterval(autoSlideInterval);
+    });
+
+    heroSlider.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+    });
+
+    heroSlider.addEventListener('touchend', (e) => {
+        if (!isDragging) return;
+        
+        const endX = e.changedTouches[0].clientX;
+        const diff = startX - endX;
+        
+        // إذا كان السحب لأكثر من 50 بكسل
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                goToNextSlide(); // سحب لليمين = الصورة التالية
+            } else {
+                goToPrevSlide(); // سحب لليسار = الصورة السابقة
+            }
+        }
+        
+        isDragging = false;
+        startAutoSlide();
+    });
+
+    console.log(`تم تهيئة السلايدر مع ${totalSlides} صورة`);
 });
-
-
-
-
-
-
-
-
-
-function goToNextSlide() {
-    currentSlide++;
-    
-    if (currentSlide >= totalSlides) {
-        currentSlide = 0;
-        // إعادة تعيين فورية للبداية
-        const heroTrack = document.getElementById('heroTrack');
-        heroTrack.style.transition = 'none';
-        heroTrack.style.transform = `translateX(0)`;
-        
-        // إعطاء الوقت لعرض الصورة الأولى
-        setTimeout(() => {
-            heroTrack.style.transition = 'transform 1s ease-in-out';
-        }, 50);
-    }
-    
-    updateSlider();
-}
-
-function goToPrevSlide() {
-    currentSlide--;
-    
-    if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-        // الانتقال فورياً للنهاية
-        const heroTrack = document.getElementById('heroTrack');
-        const slideWidth = 100 / totalSlides;
-        heroTrack.style.transition = 'none';
-        heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-        
-        setTimeout(() => {
-            heroTrack.style.transition = 'transform 1s ease-in-out';
-        }, 50);
-    }
-    
-    updateSlider();
-}
   </script>
 </body>
 
