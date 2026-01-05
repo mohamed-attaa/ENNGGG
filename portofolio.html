@@ -1579,126 +1579,78 @@ footer {
 
 
 
-      
-
-      
-
-       
 
 
 
+.slider-buttons {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 20;
+    pointer-events: none;
+}
 
+/* button base */
+.slide-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #cf7500;
+    font-size: 34px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: 
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.25);
+}
 
+/* hover */
+.slide-btn:hover {
+    background: rgb(0, 0, 0);
+    transform: scale(1.12);
+   
+}
 
+/* active click */
+.slide-btn:active {
+    transform: scale(0.95);
+}
 
+/* arrows spacing */
+.slide-btn.prev {
+    margin-left: 6px;
+}
 
+.slide-btn.next {
+    margin-right: 6px;
+}
 
+/* mobile */
+@media (max-width: 768px) {
+    .slide-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 28px;
+    }
 
- :root {
-            --text-white: #ffffff;
-            --text-gray: #e0e0e0;
-            --primary-color: #c4b59d;
-            --primary-dark: #a8997a;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-            background: #000;
-        } 
-
-        .hero-slider {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 100vh;
-            max-height: 100vh;
-            overflow: hidden;
-            margin: 0;
-            opacity: 1;
-        }
-
-        .hero-track {
-            display: flex;
-            width: 2700%; /* 27 * 100% */
-            height: 100%;
-            transition: transform 0.8s ease-in-out;
-        }
-
-        .slide-card {
-            flex: 0 0 3.7037%; /* 100% / 27 = 3.7037% */
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-        }
-
-        .slide-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.4));
-        }
-
-        /* أسهم التحكم */
-        .slider-arrows {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            transform: translateY(-50%);
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            pointer-events: none;
-        }
-
-        .arrow {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            pointer-events: auto;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .arrow:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
-            border-color: var(--primary-color);
-        }
-
-      
-
-        @media (max-width: 768px) {
-            .arrow {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            
-            .slider-arrows {
-                padding: 0 10px;
-            }
-        }
+    .slider-buttons {
+        padding: 0 16px;
+    }
+}
 
 
 
@@ -1706,6 +1658,454 @@ footer {
 
 
 
+
+/* ========== OPTIMIZED SLIDER CSS ========== */
+#portfolioHeroSlider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 600px;
+    max-height: 800px;
+    overflow: hidden;
+    background: #0A0A0A;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+#portfolioHeroSlider .hero-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#portfolioHeroSlider .slide-card {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* استخدام img بدلاً من background-image */
+#portfolioHeroSlider .slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* بدلاً من cover لحفظ الجودة */
+    object-position: center;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+}
+
+/* تحسين جودة الصورة عند التكبير */
+#portfolioHeroSlider .slide-card:hover .slide-image {
+    transform: scale(1.02);
+}
+
+/* Overlay لحماية النصوص */
+#portfolioHeroSlider .slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 10, 10, 0.85) 0%,
+        rgba(10, 10, 10, 0.4) 50%,
+        rgba(10, 10, 10, 0.85) 100%
+    );
+    z-index: 1;
+}
+
+#portfolioHeroSlider .slide-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#portfolioHeroSlider .slide-card.active .slide-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#portfolioHeroSlider .slide-title {
+    font-family: 'Poppins', 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+    #portfolioHeroSlider .slide-title {
+        font-size: 3.5rem;
+    }
+}
+
+#portfolioHeroSlider .slide-desc {
+    font-family: 'Lato', 'Open Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #E0E0E0;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Loader للتحميل */
+#sliderLoader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0A0A0A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+    border-top-color: #D4AF37;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#sliderLoader p {
+    color: #D4AF37;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+
+/* تحسينات الاستجابة */
+@media (max-width: 768px) {
+    #portfolioHeroSlider {
+        height: 50vh;
+        min-height: 400px;
+    }
+    
+    #portfolioHeroSlider .slide-title {
+        font-size: 1.8rem;
+    }
+    
+    #portfolioHeroSlider .slide-desc {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+    
+    #portfolioHeroSlider .slide-info {
+        padding: 2rem 1rem;
+    }
+    
+    .slide-image {
+        object-fit: cover; /* في الجوال نستخدم cover لحسن الاستخدام */
+    }
+}
+
+/* منع Zoom في الجوال */
+#portfolioHeroSlider {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.slide-image {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* تحسين الجودة لشاشات عالية الدقة */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .slide-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+
+
+/* ========== تنسيق زر Contact Me صغير الحجم ========== */
+.contact-btn {
+    /* الموقع: في الوسط من تحت */
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    
+    /* الحجم: صغير وأنيق */
+    min-width: 160px;
+    height: 48px;
+    padding: 0 28px;
+    
+    /* المظهر */
+    background: rgba(212, 175, 55, 0.92);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    color: #000000;
+    
+    /* الحدود */
+    border-radius: 50px;
+    
+    /* الخط */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    
+    /* الترتيب */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    
+    /* التأثيرات */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* الظل */
+    box-shadow: 
+        0 6px 20px rgba(212, 175, 55, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* تأثير الهوفر */
+.contact-btn:hover {
+    background: rgba(255, 215, 0, 0.98);
+    transform: translateX(-50%) translateY(-4px);
+    box-shadow: 
+        0 12px 30px rgba(255, 215, 0, 0.4),
+        0 0 0 2px rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* تأثير النقر */
+.contact-btn:active {
+    transform: translateX(-50%) translateY(-2px) scale(0.98);
+    transition: transform 0.1s;
+}
+
+/* الأيقونة */
+.btn-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-btn:hover .btn-icon {
+    transform: scale(1.2);
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .contact-btn {
+        bottom: 25px;
+        min-width: 140px;
+        height: 44px;
+        padding: 0 24px;
+        font-size: 14px;
+    }
+    
+    .btn-icon {
+        font-size: 18px;
+    }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 480px) {
+    .contact-btn {
+        min-width: 130px;
+        height: 42px;
+        padding: 0 22px;
+        font-size: 13px;
+        gap: 8px;
+    }
+    
+    .btn-icon {
+        font-size: 16px;
+    }
+}
+
+/* للغة العربية */
+[dir="rtl"] .contact-btn {
+    left: 50%;
+    right: auto;
+}
+
+[dir="rtl"] .btn-icon {
+    order: 2;
+}
+
+.contact-btn.small {
+    min-width: 100px;
+    height: 30px;
+    padding: 0 20px;
+    font-size: 10px;
+    border-width: 1.1px;
+}
+
+.contact-btn.small .btn-icon {
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+/* ========== تنسيق العنوان ========== */
+.slider-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+.slider-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #D4AF37;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.slider-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #A9A9A9;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .slider-title {
+        font-size: 2.2rem;
+    }
+    
+    .slider-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== إصلاح كامل للسلايدر مع RTL ========== */
+
+/* 1. السلايدر نفسه يفضل LTR دايماً */
+.hero-slider {
+    direction: ltr !important;
+}
+
+/* 2. المسار الأساسي */
+.hero-track {
+    direction: ltr !important;
+    transform-style: preserve-3d;
+}
+
+/* 3. في حالة RTL، نصلح التحويلات */
+body[dir="rtl"] .hero-slider {
+    direction: ltr !important;
+    position: relative;
+}
+
+body[dir="rtl"] .hero-track {
+    direction: ltr !important;
+    transform: none !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+/* 4. إصلاح الشرائح */
+body[dir="rtl"] .slide-card {
+    float: left !important;
+    position: relative !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    transform: none !important;
+}
+
+/* 5. إصلاح أزرار التنقل - المهم جداً */
+body[dir="rtl"] .slider-buttons {
+    position: absolute !important;
+    top: 50% !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    padding: 0 20px !important;
+    z-index: 100 !important;
+}
+
+/* 6. تثبيت مكان الأزرار */
+body[dir="rtl"] .slide-btn.prev {
+    left: 20px !important;
+    right: auto !important;
+}
+
+body[dir="rtl"] .slide-btn.next {
+    right: 20px !important;
+    left: auto !important;
+}
+
+/* 7. إصلاح اتجاه الأسهم */
+body[dir="rtl"] .slide-btn .material-symbols-outlined {
+    transform: scaleX(-1) !important;
+    display: inline-block !important;
+}
+
+/* 8. التأكد من ظهور الصور */
+body[dir="rtl"] .slide-card[style*="background-image"] {
+    background-image: inherit !important;
+}
     </style>
 </head>
 
@@ -1876,8 +2276,9 @@ footer {
             <div class="hero-content">
                 <h1 class="hero-title">Architectural Excellence</h1>
                 <p class="hero-subtitle">Crafting timeless spaces that inspire, innovate, and elevate the human experience through visionary design and technical mastery.</p>
-                <a href="#portfolio" class="hero-cta">
-                    <span>Explore Our Portfolio</span>
+              <a href="#portfolioSlider" class="hero-cta" onclick="scrollToSlider(event)">
+    <span>Explore Our Portfolio</span>
+</a>
                     <!-- <span class="material-symbols-outlined">arrow_forward</span> -->
                 </a>
             </div>
@@ -1886,67 +2287,52 @@ footer {
                 <div class="scroll-arrow" onclick="scrollToPortfolio()"></div>
             </div>
         </section>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-<div class="hero-slider">
-  
-        <div class="hero-track" id="heroTrack">
-            <!-- الشريحة 1 -->
-            <div class="slide-card" style="background-image: url('./img/getCroppedImage\ \(1\).jpg');"></div>
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.42\ AM.jpeg');"></div>
-            <!-- الشريحة 2 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.40.53\ AM.jpeg');"></div>
-            <!-- الشريحة 3 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.41.16\ AM.jpeg');"></div>
-            <!-- الشريحة 4 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.42\ AM\ \(1\).jpeg');"></div>
-            <!-- الشريحة 5 -->            <!-- الشريحة 6 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.43\ AM.jpeg');"></div>
-            <!-- الشريحة 7 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.43\ AM\ \(1\).jpeg');"></div>
-            <!-- الشريحة 8 -->
-            <!-- الشريحة 9 -->
-            <!-- الشريحة 10 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.45.44\ AM\ \(1\).jpeg');"></div>
-            <!-- الشريحة 11 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.46.21\ AM.jpeg');"></div>
-            <!-- الشريحة 12 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.46.48\ AM.jpeg');"></div>
-            <!-- الشريحة 13 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.47.05\ AM.jpeg');"></div>
-            <!-- الشريحة 14 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.47.26\ AM.jpeg');"></div>
-            <!-- الشريحة 15 -->
-            <div class="slide-card" style="background-image: url('./img/WhatsApp\ Image\ 2026-01-04\ at\ 3.47.46\ AM.jpeg');"></div>
-            <!-- الشريحة 16 -->
-           
-            <div class="slide-card" style="background-image: url('./img/getCroppedImage\ \(1\).jpg');"></div>
-        </div>
-
-        <!-- أسهم التحكم -->
-        <div class="slider-arrows">
-            <button class="arrow arrow-prev" id="prevBtn">‹</button>
-            <button class="arrow arrow-next" id="nextBtn">›</button>
-        </div>
+<!-- Hero Slider - Full Screen -->
+<!-- Hero Slider - Full Screen -->
+ <!-- العنوان فوق السلايدر -->
+<div class="slider-header">
+    <h2 class="slider-title">Selected Works</h2>
+</div>
+<div class="hero-slider fullscreen" id="portfolioHeroSlider">
+    <div class="hero-track" id="heroTrack">
+        <!-- سيتم إضافة الشرائح ديناميكياً عبر JavaScript -->
     </div>
+
+    <!-- Navigation Buttons -->
+    <div class="slider-buttons">
+        <button class="slide-btn prev" id="prevSlideBtn">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button class="slide-btn next" id="nextSlideBtn">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+    </div>
+
+    <!-- Loader -->
+    <div class="slider-loader" id="sliderLoader">
+        <div class="loader-spinner"></div>
+        <p>Loading high-quality images...</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
     </main>
 
 
@@ -3099,156 +3485,403 @@ window.removeFromCart = removeFromCart;
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    let currentSlide = 0;
-    const totalSlides = 13; // تأكد أن هذا يطابق عدد الصور لديك
-    let autoSlideInterval;
 
-    // عناصر الأزرار
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const heroTrack = document.getElementById('heroTrack');
 
-    // حساب عرض كل شريحة
-    const slideWidth = 100 / totalSlides;
 
-    // تأكد من عرض المسار الصحيح
-    heroTrack.style.width = `${100 * totalSlides}%`;
 
-    function updateSlider() {
-        const translateX = -(currentSlide * slideWidth);
-        heroTrack.style.transform = `translateX(${translateX}%)`;
-    }
 
-    function goToNextSlide() {
-        currentSlide++;
-        
-        if (currentSlide >= totalSlides) {
-            // إعادة للبداية بانتقال سلس
-            currentSlide = 0;
-            
-            // إخفاء الانتقال مؤقتاً للعودة للبداية
-            heroTrack.style.transition = 'none';
-            heroTrack.style.transform = `translateX(0)`;
-            
-            // إعادة تفعيل الانتقال بعد فترة بسيطة
-            setTimeout(() => {
-                heroTrack.style.transition = 'transform 1s ease-in-out';
-                // تحديث ليعود للصورة الأولى بعد الانتقال
-                setTimeout(() => {
-                    updateSlider();
-                }, 50);
-            }, 10);
-            return;
-        }
-        
-        updateSlider();
-    }
 
-    function goToPrevSlide() {
-        currentSlide--;
-        
-        if (currentSlide < 0) {
-            // الانتقال للصورة الأخيرة
-            currentSlide = totalSlides - 1;
-            
-            // الانتقال للنهاية مباشرة بدون انتقال
-            heroTrack.style.transition = 'none';
-            heroTrack.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
-            
-            // إعادة تفعيل الانتقال
-            setTimeout(() => {
-                heroTrack.style.transition = 'transform 1s ease-in-out';
-            }, 10);
-            return;
-        }
-        
-        updateSlider();
-    }
 
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(goToNextSlide, 4000); // 4 ثواني بين كل شريحة
-    }
 
-    function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-    }
 
-    // تشغيل السلايدر
-    updateSlider();
-    startAutoSlide();
 
-    // أحداث الأزرار
-    prevBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToPrevSlide();
-        resetAutoSlide();
-    });
 
-    nextBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        goToNextSlide();
-        resetAutoSlide();
-    });
 
-    // وقف السلايدر عند التمرير فوقه
-    const heroSlider = document.querySelector('.hero-slider');
-    heroSlider.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
+// ========== HIGH QUALITY SLIDER FOR PORTFOLIO ==========
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.getElementById('portfolioHeroSlider');
+    if (!slider) return;
     
-    heroSlider.addEventListener('mouseleave', () => {
-        startAutoSlide();
-    });
-
-    // أحداث لوحة المفاتيح - تم تصحيح الاتجاهات
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') { // السهم الأيسر للصورة السابقة
-            goToPrevSlide();
-            resetAutoSlide();
-        } else if (e.key === 'ArrowRight') { // السهم الأيمن للصورة التالية
-            goToNextSlide();
-            resetAutoSlide();
+    console.log('Loading high-quality portfolio slider...');
+    
+    // بيانات الصور الأصلية
+    const sliderImages = [
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.21 PM (1).jpeg',
+            width: 1950,
+            height: 1080
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.32 PM (1).jpeg',
+            width: 1024,
+            height: 569
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.32 PM.jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.33 PM (1).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.34 PM (1).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.34 PM (2).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.34 PM.jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.35 PM.jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.36 PM.jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (1).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (2).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (3).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (4).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (4).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (5).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (6).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/WhatsApp Image 2026-01-04 at 5.42.40 PM (7).jpeg',
+            width: 1200,
+            height: 800
+        },
+        {
+            url: './img/getCroppedImage (1).jpg',
+            width: 1200,
+            height: 800
+        },
+       
+      
+    
+        
+    ];
+    
+    // عناصر DOM
+    const heroTrack = document.getElementById('heroTrack');
+    const prevBtn = document.getElementById('prevSlideBtn');
+    const nextBtn = document.getElementById('nextSlideBtn');
+    const loader = document.getElementById('sliderLoader');
+    
+    // متغيرات السلايدر
+    let currentSlide = 0;
+    let isAnimating = false;
+    let loadedImages = 0;
+    const totalSlides = sliderImages.length;
+    let autoSlideInterval;
+    
+    // دالة إنشاء الشرائح
+    function createSlides() {
+        heroTrack.innerHTML = '';
+        
+        sliderImages.forEach((image, index) => {
+            const slide = document.createElement('div');
+            slide.className = 'slide-card';
+            slide.dataset.index = index;
+            
+            // إنشاء عنصر img
+            const img = document.createElement('img');
+            img.className = 'slide-image';
+            img.alt = image.title;
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            
+            // Overlay للنصوص
+            const overlay = document.createElement('div');
+            overlay.className = 'slide-overlay';
+            
+            // معلومات الشريحة
+            const info = document.createElement('div');
+            info.className = 'slide-info';
+            
+            const title = document.createElement('div');
+            title.className = 'slide-title';
+            title.textContent = image.title;
+            
+            const desc = document.createElement('div');
+            desc.className = 'slide-desc';
+            desc.textContent = image.desc;
+            
+          const button = document.createElement('button');
+button.innerHTML = `
+    <span class="btn-icon">💬</span>
+    <span class="btn-text">Contact Me</span>
+`;
+button.className = 'contact-btn elegant-btn gold-btn floating-btn';
+button.onclick = () => window.open('https://wa.me/447470631885', '_blank');
+            // تجميع العناصر
+            info.appendChild(title);
+            info.appendChild(desc);
+            info.appendChild(button);
+            
+            slide.appendChild(img);
+            slide.appendChild(overlay);
+            slide.appendChild(info);
+            
+            heroTrack.appendChild(slide);
+            
+            // تحميل الصورة
+            loadImage(image.url, img, index);
+        });
+    }
+    
+    // دالة تحميل الصور الذكية
+    function loadImage(src, imgElement, index) {
+        const img = new Image();
+        
+        // معالج الأخطاء
+        img.onerror = function() {
+            console.error(`Failed to load image: ${src}`);
+            // استخدام صورة افتراضية
+            imgElement.src = 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=1080&fit=crop&q=80';
+            imgElement.style.objectFit = 'cover';
+            checkAllImagesLoaded();
+        };
+        
+        // عند تحميل الصورة بنجاح
+        img.onload = function() {
+            console.log(`Image ${index + 1} loaded: ${src}`);
+            imgElement.src = src;
+            imgElement.style.opacity = '0';
+            
+            // تأثير fade-in للصورة
+            setTimeout(() => {
+                imgElement.style.transition = 'opacity 0.8s ease';
+                imgElement.style.opacity = '1';
+            }, 100);
+            
+            checkAllImagesLoaded();
+        };
+        
+        // بدء التحميل
+        img.src = src;
+    }
+    
+    // التحقق من تحميل كل الصور
+    function checkAllImagesLoaded() {
+        loadedImages++;
+        
+        if (loadedImages === totalSlides) {
+            // إخفاء الـ loader
+            setTimeout(() => {
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.transition = 'opacity 0.5s ease';
+                    setTimeout(() => {
+                        loader.style.display = 'none';
+                        // بدء السلايدر
+                        initSlider();
+                    }, 500);
+                }
+            }, 500);
         }
-    });
-
-    // إضافة دعم السحب للجوال
-    let startX = 0;
-    let isDragging = false;
-
-    heroSlider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
+    }
+    
+    // دالة تهيئة السلايدر
+    function initSlider() {
+        // إضافة active class للشريحة الأولى
+        const slides = document.querySelectorAll('.slide-card');
+        slides[0].classList.add('active');
+        
+        // بدء التمرير التلقائي
+        startAutoSlide();
+        
+        // إضافة الأحداث
+        if (prevBtn) prevBtn.addEventListener('click', goToPrevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', goToNextSlide);
+        
+        // أحداث لوحة المفاتيح
+        document.addEventListener('keydown', handleKeyDown);
+        
+        // أحداث اللمس للجوال
+        setupTouchEvents();
+        
+        // إظهار السلايدر
+        slider.style.opacity = '1';
+        
+        console.log('High-quality slider initialized');
+    }
+    
+    // الانتقال للشريحة التالية
+    function goToNextSlide() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        const slides = document.querySelectorAll('.slide-card');
+        slides[currentSlide].classList.remove('active');
+        
+        currentSlide = (currentSlide + 1) % totalSlides;
+        
+        slides[currentSlide].classList.add('active');
+        heroTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        resetAutoSlide();
+        
+        setTimeout(() => {
+            isAnimating = false;
+        }, 700);
+    }
+    
+    // الانتقال للشريحة السابقة
+    function goToPrevSlide() {
+        if (isAnimating) return;
+        isAnimating = true;
+        
+        const slides = document.querySelectorAll('.slide-card');
+        slides[currentSlide].classList.remove('active');
+        
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        
+        slides[currentSlide].classList.add('active');
+        heroTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        resetAutoSlide();
+        
+        setTimeout(() => {
+            isAnimating = false;
+        }, 700);
+    }
+    
+    // بدء التمرير التلقائي
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(goToNextSlide, 6000);
+    }
+    
+    // إيقاف التمرير التلقائي
+    function pauseAutoSlide() {
         clearInterval(autoSlideInterval);
-    });
-
-    heroSlider.addEventListener('touchmove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-    });
-
-    heroSlider.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
+    }
+    
+    // إعادة ضبط التمرير التلقائي
+    function resetAutoSlide() {
+        pauseAutoSlide();
+        startAutoSlide();
+    }
+    
+    // أحداث لوحة المفاتيح
+    function handleKeyDown(e) {
+        if (e.key === 'ArrowRight') {
+            goToNextSlide();
+        } else if (e.key === 'ArrowLeft') {
+            goToPrevSlide();
+        }
+    }
+    
+    // أحداث اللمس للجوال
+    function setupTouchEvents() {
+        let touchStartX = 0;
+        let touchEndX = 0;
         
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+            pauseAutoSlide();
+        }, { passive: true });
         
-        // إذا كان السحب لأكثر من 50 بكسل
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                goToNextSlide(); // سحب لليمين = الصورة التالية
-            } else {
-                goToPrevSlide(); // سحب لليسار = الصورة السابقة
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            handleSwipe();
+            startAutoSlide();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const swipeDistance = touchEndX - touchStartX;
+            
+            if (Math.abs(swipeDistance) > swipeThreshold) {
+                if (swipeDistance > 0) {
+                    goToPrevSlide();
+                } else {
+                    goToNextSlide();
+                }
             }
         }
-        
-        isDragging = false;
-        startAutoSlide();
-    });
-
-    console.log(`تم تهيئة السلايدر مع ${totalSlides} صورة`);
+    }
+    
+    // بدء التحميل
+    createSlides();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// بديل أبسط بدون حدث
+document.querySelector('.hero-cta').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const slider = document.getElementById('portfolioHeroSlider');
+    if (slider) {
+        slider.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+});
+
+
+
+
   </script>
 </body>
 

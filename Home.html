@@ -2371,75 +2371,39 @@ footer {
     font-size: 18px;
 }
 
-/* تحسينات إضافية للغة العربية */
-body[dir="rtl"] .features-grid,
-body[dir="rtl"] .specializations-grid,
-body[dir="rtl"] .steps-container,
-body[dir="rtl"] .testimonials-grid,
-body[dir="rtl"] .footer-grid {
-    direction: rtl;
+/* ========== إصلاحات كاملة للغة العربية - صفحة الهوم ========== */
+
+/* 1. إجبار السلايدر على LTR دائماً */
+body[dir="rtl"] .hero-track {
+    direction: ltr !important;
 }
 
-body[dir="rtl"] .feature-card,
-body[dir="rtl"] .specialization-card,
-body[dir="rtl"] .step,
-body[dir="rtl"] .testimonial-card {
-    text-align: right;
+body[dir="rtl"] .slider-buttons {
+    transform: translateY(-50%) !important;
+    left: 0 !important;
+    right: 0 !important;
 }
 
-body[dir="rtl"] .feature-content,
-body[dir="rtl"] .specialization-card .card-description,
-body[dir="rtl"] .testimonial-text {
-    text-align: right;
+body[dir="rtl"] .slide-btn {
+    transform: none !important;
 }
 
-body[dir="rtl"] .card-features li {
-    padding-left: 0;
-    padding-right: 25px;
-    text-align: right;
+body[dir="rtl"] .slide-btn.prev {
+    left: 20px !important;
+    right: auto !important;
 }
 
-body[dir="rtl"] .card-features li:before {
-    left: auto;
-    right: 0;
+body[dir="rtl"] .slide-btn.next {
+    right: 20px !important;
+    left: auto !important;
 }
 
-body[dir="rtl"] .card-number {
-    left: 20px;
-    right: auto;
+/* إصلاح أيقونات الأسهم */
+body[dir="rtl"] .slide-btn .material-symbols-outlined {
+    transform: scaleX(-1) !important;
 }
 
-body[dir="rtl"] .step {
-    text-align: right;
-}
-
-body[dir="rtl"] .testimonial-card .quote-icon {
-    left: 40px;
-    right: auto;
-}
-
-body[dir="rtl"] .client-info {
-    flex-direction: row-reverse;
-}
-
-body[dir="rtl"] .project-highlight {
-    border-left: none;
-    border-right: 3px solid #D4AF37;
-}
-
-body[dir="rtl"] .footer-links {
-    text-align: right;
-}
-
-body[dir="rtl"] .footer-link {
-    justify-content: flex-end;
-}
-
-body[dir="rtl"] .footer-link:hover {
-    transform: translateX(-5px);
-}
-
-/* تحسين الخط للعربية */
+/* 2. تحسين النصوص للعربية */
 body[dir="rtl"] {
     font-family: 'Tajawal', 'Inter', sans-serif;
     line-height: 1.8;
@@ -2475,67 +2439,172 @@ body[dir="rtl"] .footer-about-text,
 body[dir="rtl"] .footer-link {
     font-family: 'Tajawal', 'Open Sans', sans-serif;
 }
-   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* إصلاحات للسلايدر مع RTL */
-body[dir="rtl"] .hero-track {
-    direction: ltr; /* إبقاء اتجاه السلايدر LTR حتى في RTL */
+/* 3. Grids وتخطيط */
+body[dir="rtl"] .features-grid,
+body[dir="rtl"] .specializations-grid,
+body[dir="rtl"] .testimonials-grid,
+body[dir="rtl"] .footer-grid {
+    direction: rtl;
 }
 
-body[dir="rtl"] .slider-buttons {
-    transform: translateY(-50%) scaleX(-1); /* عكس اتجاه الأزرار */
+body[dir="rtl"] .steps-container {
+    direction: rtl;
+    flex-direction: row; /* إبقاء الاتجاه أفقياً */
 }
 
-body[dir="rtl"] .slide-btn {
-    transform: scaleX(-1); /* إصلاح اتجاه الأيقونات في الأزرار */
-}
-
-body[dir="rtl"] .slide-info {
+/* 4. البطاقات */
+body[dir="rtl"] .feature-card,
+body[dir="rtl"] .specialization-card,
+body[dir="rtl"] .step,
+body[dir="rtl"] .testimonial-card {
     text-align: right;
+}
+
+body[dir="rtl"] .feature-content,
+body[dir="rtl"] .specialization-card .card-description,
+body[dir="rtl"] .testimonial-text {
+    text-align: right;
+}
+
+/* 5. القوائم */
+body[dir="rtl"] .card-features li {
+    padding-left: 0;
+    padding-right: 25px;
+    text-align: right;
+}
+
+body[dir="rtl"] .card-features li:before {
     left: auto;
     right: 0;
 }
 
-/* إصلاح تحميل الصور */
-.slide-card {
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    transition: background-image 0.3s ease;
+/* 6. الأرقام */
+body[dir="rtl"] .card-number {
+    left: 20px;
+    right: auto;
 }
 
-/* إضافة تأثير تحميل للصور */
-.slide-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* 7. Steps */
+body[dir="rtl"] .step {
+    text-align: right;
+}
+
+/* 8. Testimonials */
+body[dir="rtl"] .testimonial-card .quote-icon {
+    left: 40px;
+    right: auto;
+}
+
+body[dir="rtl"] .client-info {
+    flex-direction: row-reverse;
+}
+
+body[dir="rtl"] .project-highlight {
+    border-left: none;
+    border-right: 3px solid #D4AF37;
+}
+
+/* 9. Footer */
+body[dir="rtl"] .footer-links {
+    text-align: right;
+}
+
+body[dir="rtl"] .footer-link {
+    justify-content: flex-end;
+    direction: rtl;
+}
+
+body[dir="rtl"] .footer-link:hover {
+    transform: translateX(-5px);
+}
+
+/* 10. Navigation */
+body[dir="rtl"] .nav-links {
+    direction: ltr; /* إبقاء النافبار LTR */
+}
+
+body[dir="rtl"] .nav-link::after {
+    left: auto;
+    right: 0;
+}
+
+body[dir="rtl"] .nav-link:hover::after {
     width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 10, 0.3);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    right: 0;
+    left: auto;
 }
 
-.slide-card.loading::after {
-    opacity: 1;
-    background: rgba(10, 10, 10, 0.7);
+/* 11. Slide Info */
+body[dir="rtl"] .slide-info {
+    text-align: right;
+    left: auto;
+    right: 0;
+    direction: rtl;
 }
 
+/* 12. إصلاحات خاصة للسلايدر */
+body[dir="rtl"] .hero-slider {
+    direction: ltr !important;
+}
+
+body[dir="rtl"] .slide-card {
+    background-position: center center !important;
+    background-size: cover !important;
+    float: left !important;
+}
+
+/* 13. Mobile Menu */
+body[dir="rtl"] .mobile-nav {
+    direction: rtl;
+    text-align: right;
+}
+
+body[dir="rtl"] .mobile-nav-link {
+    text-align: right;
+    padding-right: 30px;
+}
+
+/* 14. Social Links */
+body[dir="rtl"] .social-links {
+    direction: ltr; /* إبقاء الأيقونات LTR */
+}
+
+/* 15. WhatsApp Float */
+body[dir="rtl"] .whatsapp-float {
+    left: 30px;
+    right: auto;
+}
+
+/* 16. CTA Buttons */
+body[dir="rtl"] .cta-buttons {
+    direction: ltr; /* إبقاء الأزرار LTR */
+}
+
+/* 17. إصلاح ترتيب العناصر في Flex */
+body[dir="rtl"] .logo {
+    direction: ltr; /* إبقاء اللوجو LTR */
+}
+
+/* 18. إصلاح خطوط الخطوط للنصوص الطويلة */
+body[dir="rtl"] p,
+body[dir="rtl"] li,
+body[dir="rtl"] span {
+    word-spacing: normal;
+    letter-spacing: normal;
+}
+
+/* 19. تحسين القرائية */
+body[dir="rtl"] {
+    text-align: right;
+    text-align: start; /* أفضل للمتصفحات الحديثة */
+}
+
+/* 20. إصلاحات الأداء */
+body[dir="rtl"] * {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
 
 
 
