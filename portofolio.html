@@ -1582,6 +1582,16 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
 .slider-buttons {
     position: absolute;
     inset: 0;
@@ -1600,8 +1610,6 @@ footer {
     border-radius: 50%;
     border: none;
     background: rgb(0, 0, 0);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     color: #cf7500;
     font-size: 34px;
     font-weight: 300;
@@ -1612,17 +1620,13 @@ footer {
     pointer-events: auto;
     transition: 
         background 0.35s ease,
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-    box-shadow: 
-        0 10px 30px rgba(0, 0, 0, 0.25);
+        transform 0.35s ease;
 }
 
 /* hover */
 .slide-btn:hover {
     background: rgb(0, 0, 0);
     transform: scale(1.12);
-   
 }
 
 /* active click */
@@ -1652,13 +1656,6 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
 /* ========== OPTIMIZED SLIDER CSS ========== */
 #portfolioHeroSlider {
     position: relative;
@@ -1685,40 +1682,30 @@ footer {
     height: 100%;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* استخدام img بدلاً من background-image */
+/* تصغير الصور أكثر (85%) وتوسيطها */
 #portfolioHeroSlider .slide-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* بدلاً من cover لحفظ الجودة */
-    object-position: center;
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    object-position: center center;
     transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     backface-visibility: hidden;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* حواف مستديرة خفيفة */
 }
 
-/* تحسين جودة الصورة عند التكبير */
+/* تكبير خفيف جداً عند الهوفر */
 #portfolioHeroSlider .slide-card:hover .slide-image {
-    transform: scale(1.02);
-}
-
-/* Overlay لحماية النصوص */
-#portfolioHeroSlider .slide-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(10, 10, 10, 0.85) 0%,
-        rgba(10, 10, 10, 0.4) 50%,
-        rgba(10, 10, 10, 0.85) 100%
-    );
-    z-index: 1;
+    transform: scale(1.008);
 }
 
 #portfolioHeroSlider .slide-info {
@@ -1748,7 +1735,6 @@ footer {
     line-height: 1.1;
     color: #FFFFFF;
     margin-bottom: 1rem;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
     letter-spacing: -0.5px;
 }
 
@@ -1768,7 +1754,6 @@ footer {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
 }
 
 /* Loader للتحميل */
@@ -1789,7 +1774,7 @@ footer {
 .loader-spinner {
     width: 50px;
     height: 50px;
-    border: 3px solid rgba(212, 175, 55, 0.2);
+    border: 3px solid #333333;
     border-radius: 50%;
     border-top-color: #D4AF37;
     animation: spin 1s ease-in-out infinite;
@@ -1826,8 +1811,18 @@ footer {
         padding: 2rem 1rem;
     }
     
+    /* تصغير أكثر في الجوال */
     .slide-image {
-        object-fit: cover; /* في الجوال نستخدم cover لحسن الاستخدام */
+        width: 88%;
+        height: 88%;
+    }
+}
+
+/* للشاشات الكبيرة جداً */
+@media (min-width: 1200px) {
+    #portfolioHeroSlider .slide-image {
+        width: 82%;
+        height: 82%;
     }
 }
 
@@ -1852,60 +1847,37 @@ footer {
     }
 }
 
-
-
 /* ========== تنسيق زر Contact Me صغير الحجم ========== */
 .contact-btn {
-    /* الموقع: في الوسط من تحت */
     position: absolute;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
-    
-    /* الحجم: صغير وأنيق */
     min-width: 160px;
     height: 48px;
     padding: 0 28px;
-    
-    /* المظهر */
-    background: rgba(212, 175, 55, 0.92);
-    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: #D4AF37;
+    border: 2px solid #FFFFFF;
     color: #000000;
-    
-    /* الحدود */
     border-radius: 50px;
-    
-    /* الخط */
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 15px;
     letter-spacing: 0.5px;
-    
-    /* الترتيب */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     cursor: pointer;
-    
-    /* التأثيرات */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
-    /* الظل */
-    box-shadow: 
-        0 6px 20px rgba(212, 175, 55, 0.3),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 /* تأثير الهوفر */
 .contact-btn:hover {
-    background: rgba(255, 215, 0, 0.98);
+    background: #FFD700;
     transform: translateX(-50%) translateY(-4px);
-    box-shadow: 
-        0 12px 30px rgba(255, 215, 0, 0.4),
-        0 0 0 2px rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
+    border-color: #FFFFFF;
 }
 
 /* تأثير النقر */
@@ -1976,12 +1948,6 @@ footer {
     font-size: 10px;
 }
 
-
-
-
-
-
-
 /* ========== تنسيق العنوان ========== */
 .slider-header {
     text-align: center;
@@ -2018,24 +1984,6 @@ footer {
         padding: 0 10px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ========== إصلاح كامل للسلايدر مع RTL ========== */
 
