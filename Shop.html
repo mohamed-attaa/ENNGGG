@@ -1494,6 +1494,45 @@ body[dir="rtl"] .cart-item-details {
 body[dir="rtl"] .cart-item-quantity {
     flex-direction: row-reverse;
 }
+/* زر PayPal نظيف */
+.nav-paypal {
+    background: #003087;
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+
+.nav-paypal:hover {
+    background: #002569;
+    border-color: #d69600;
+    transform: translateY(-1px);
+}
+
+.nav-paypal img {
+    width: 18px;
+    height: auto;
+}
+
+/* للغة العربية */
+body[dir="rtl"] .nav-paypal {
+    flex-direction: row-reverse;
+}
+
+/* في الموبايل */
+.mobile-nav .nav-paypal {
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0;
+    padding: 10px;
+}
     </style>
 </head>
 <body>
@@ -1592,6 +1631,15 @@ body[dir="rtl"] .cart-item-quantity {
     <span class="material-symbols-outlined">language</span>
     <span id="langText">EN</span>
 </button>
+
+<!-- زر PayPal للديسكتوب -->
+<a href="https://www.paypal.com/donate?hosted_button_id=AQs2PNirMq0WBuUZDrcSJSk79FA1hrT_-nPbDrUiScA7irHx8PhpoaeYSctEPRSJxTo7S_WsFEsKkdIq" 
+   class="nav-paypal" 
+   target="_blank">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+    PayPal
+</a>
+
                 <!-- Cart Button -->
                 <button class="nav-cart" id="cartBtn">
                     <span class="material-symbols-outlined">shopping_cart</span>
@@ -1632,6 +1680,14 @@ body[dir="rtl"] .cart-item-quantity {
     <span class="material-symbols-outlined">language</span>
     <span id="mobileLangText">English / عربي</span>
 </button>
+<!-- زر PayPal للموبايل -->
+<a href="https://www.paypal.com/donate?hosted_button_id=AQs2PNirMq0WBuUZDrcSJSk79FA1hrT_-nPbDrUiScA7irHx8PhpoaeYSctEPRSJxTo7S_WsFEsKkdIq" 
+   class="nav-paypal" 
+   target="_blank"
+   style="justify-content: center; margin: 8px 0;">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+    Donate via PayPal
+</a>
         </div>
     </div>
 
@@ -1835,7 +1891,7 @@ body[dir="rtl"] .cart-item-quantity {
         
         ar: {
             // Header & Navigation
-            logo: "معماري → سي إم إيه",
+            logo: "المهندس → صندوق الأدوات",
             home: "الرئيسية",
             services: "الخدمات",
             shop: "المتجر",

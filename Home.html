@@ -2726,6 +2726,67 @@ body[dir="rtl"] * {
                 min-width: 100%;
             }
         }
+
+
+        .steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.step {
+    flex: 1 1 280px;
+    max-width: 320px;
+    text-align: center;
+}
+
+.step-icon {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========== PAYPAL BUTTON STYLES ========== */
+
+/* زر PayPal نظيف */
+.nav-paypal {
+    background: #003087;
+    border-radius: 6px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+
+.nav-paypal:hover {
+    background: #002569;
+    border-color: #d69600;
+    transform: translateY(-1px);
+}
+
+.nav-paypal img {
+    width: 18px;
+    height: auto;
+}
+
+/* للغة العربية */
+body[dir="rtl"] .nav-paypal {
+    flex-direction: row-reverse;
+}
+
+/* في الموبايل */
+.mobile-nav .nav-paypal {
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0;
+    padding: 10px;
+}
     </style>
 </head>
 
@@ -2822,11 +2883,14 @@ body[dir="rtl"] * {
     <span class="material-symbols-outlined">language</span>
     <span id="langText">EN</span>
 </button>
-
-
-
-
-
+<!-- زر PayPal في الديسكتوب -->
+<!-- زر PayPal للديسكتوب -->
+<a href="https://www.paypal.com/donate?hosted_button_id=AQs2PNirMq0WBuUZDrcSJSk79FA1hrT_-nPbDrUiScA7irHx8PhpoaeYSctEPRSJxTo7S_WsFEsKkdIq" 
+   class="nav-paypal" 
+   target="_blank">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+    PayPal
+</a>
                     <button class="nav-cart" id="cartBtn">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="cart-badge" id="cartCount">0</span>
@@ -2840,6 +2904,8 @@ body[dir="rtl"] * {
                         </span>
                     </a>
                 </div>
+ 
+
             </nav>
 
             <div style="display: flex; align-items: center; gap: 0.75rem;">
@@ -2863,6 +2929,15 @@ body[dir="rtl"] * {
     <span class="material-symbols-outlined">language</span>
     <span id="mobileLangText">English / عربي</span>
 </button>
+<!-- زر PayPal في الموبايل -->
+<!-- زر PayPal للموبايل -->
+<a href="https://www.paypal.com/donate?hosted_button_id=AQs2PNirMq0WBuUZDrcSJSk79FA1hrT_-nPbDrUiScA7irHx8PhpoaeYSctEPRSJxTo7S_WsFEsKkdIq" 
+   class="nav-paypal" 
+   target="_blank"
+   style="justify-content: center; margin: 8px 0;">
+    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
+    Donate via PayPal
+</a>
             </div>
         </div>
 
@@ -2873,7 +2948,6 @@ body[dir="rtl"] * {
         <div class="slide-card" style="background-image: url('./img/01_nmq2_2002_do_020.png');">
             <div class="slide-info">
                 <div class="slide-title">We Help You Present with Confidence</div>
-                <div class="slide-desc">Supporting line: Clear, competition-ready boards that communicate your ideas fast.</div>
                 <button onclick="window.open('https://wa.me/447470631885', '_blank')">Contact me</button>
             </div>
         </div>
@@ -2882,7 +2956,6 @@ body[dir="rtl"] * {
         <div class="slide-card" style="background-image: url('./img/Orla-by-OMNIYAT-Amenities-1024x569 (1).jpg');">
             <div class="slide-info">
                 <div class="slide-title">We Support You with Reliable, High-Quality Renders</div>
-                <div class="slide-desc">Supporting line: Interior and exterior visuals that reflect your design intent.</div>
                 <button onclick="window.open('https://wa.me/447470631885', '_blank')">Contact me</button>
             </div>
         </div>
@@ -2891,7 +2964,6 @@ body[dir="rtl"] * {
         <div class="slide-card" style="background-image: url('./img/getCroppedImage\ \(1\).jpg');">
             <div class="slide-info">
                 <div class="slide-title">We Help You Deliver Clean, Professional Drawings</div>
-                <div class="slide-desc">Supporting line: Plans, sections, and elevations prepared for review and approval.</div>
                 <button onclick="window.open('https://wa.me/447470631885', '_blank')">Contact me</button>
             </div>
         </div>
@@ -2900,7 +2972,6 @@ body[dir="rtl"] * {
         <div class="slide-card" style="background-image: url('./img/getCroppedImage\ \(2\).jpg');">
             <div class="slide-info">
                 <div class="slide-title">We Help You Explain Your Design Clearly</div>
-                <div class="slide-desc">Built by a London-based architect skilled in narrative design and mentoring</div>
                 <button onclick="window.open('https://wa.me/447470631885', '_blank')">Contact me</button>
             </div>
         </div>
