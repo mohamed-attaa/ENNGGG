@@ -238,8 +238,8 @@ function setupEventListeners() {
     // إغلاق مودال السلة
     closeCartModalBtn.addEventListener('click', closeCartModal);
     
-    // زر Checkout
-    checkoutBtn.addEventListener('click', checkout);
+    // زر Checkout - PayPal
+    checkoutBtn.addEventListener('click', checkoutToPayPal);
     
     // زر تفريغ السلة
     clearCartBtn.addEventListener('click', clearCart);
@@ -640,34 +640,17 @@ function clearCart() {
     }
 }
 
-// إتمام الشراء
-function checkout() {
-    if (cart.length === 0) return;
+// إتمام الشراء - فتح PayPal مباشرة بدون أي dialog
+function checkoutToPayPal() {
+    // فتح PayPal مباشرة بدون أي تأكيد أو dialog
+    window.open(
+        'https://www.paypal.me/AsmaaAlbaz', 
+        '_blank', 
+        'noopener,noreferrer'
+    );
     
-    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    // هنا يمكنك إضافة عملية الدفع الفعلية
-    // لاحظت أنك تستخدم WhatsApp للتواصل
-    const message = `Hello! I would like to order the following services:\n\n` +
-                   cart.map(item => {
-                       const service = servicesData[item.id];
-                       return `• ${service.title} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`;
-                   }).join('\n') +
-                   `\n\nTotal: $${total.toFixed(2)}`;
-    
-    const whatsappUrl = `https://wa.me/447470631885?text=${encodeURIComponent(message)}`;
-    
-    // يمكنك فتح WhatsApp أو عرض رسالة تأكيد
-    if (confirm(`Total: $${total.toFixed(2)}\n\nProceed to WhatsApp for payment?`)) {
-        window.open(whatsappUrl, '_blank');
-        
-        // تفريغ السلة بعد الإرسال
-        cart = [];
-        localStorage.setItem('servicesCart', JSON.stringify(cart));
-        updateCartCount();
-        closeCartModal();
-        showNotification('Order sent to WhatsApp!');
-    }
+    // إظهار إشعار
+    showNotification('Redirecting to PayPal...');
 }
 
 // عرض الإشعار
@@ -1511,4 +1494,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Language initialization complete');
     console.log('Body direction:', document.body.dir);
+});
+
+// زر PayPal - أكد أن الزر يعمل مباشرة
+document.addEventListener('DOMContentLoaded', function() {
+    // تأكد من عمل زر PayPal مباشرة
+    const paypalButton = document.getElementById('checkoutBtn');
+    
+    if (paypalButton) {
+        paypalButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.open('https://www.paypal.me/AsmaaAlbaz', '_blank');
+        });
+        
+        // أيضًا إضافة onclick مباشر للتأكد
+        paypalButton.onclick = function() {
+            window.open('https://www.paypal.me/AsmaaAlbaz', '_blank');
+            return false;
+        };
+    }
+});
+
+// زر Contact في صفحة العربة
+document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.getElementById('contactBtn');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function() {
+            // رابط صفحة الكونتكت مع hash للقسم المطلوب
+            window.location.href = 'contact.html#email-form';
+        });
+    }
 });

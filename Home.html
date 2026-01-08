@@ -2787,6 +2787,94 @@ body[dir="rtl"] .nav-paypal {
     margin: 8px 0;
     padding: 10px;
 }
+
+.cart-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* تنسيق عام لجميع الأزرار */
+.checkout-btn,
+.contact-btn,
+.clear-cart-btn {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+/* زر Checkout (PayPal) - أزرق */
+.checkout-btn {
+    background: linear-gradient(135deg, #0070ba 0%, #1546a0 100%);
+    color: white;
+    border: 2px solid #0070ba;
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(135deg, #005ea6 0%, #0d3a8c 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 112, 186, 0.3);
+}
+
+/* زر Contact - أخضر */
+.contact-btn {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    color: white;
+    border: 2px solid #28a745;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(135deg, #218838 0%, #155724 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(40, 167, 69, 0.3);
+}
+
+/* زر Clear Cart - أحمر */
+.clear-cart-btn {
+    background: linear-gradient(135deg, #dc3545 0%, #bd2130 100%);
+    color: white;
+    border: 2px solid #dc3545;
+}
+
+.clear-cart-btn:hover {
+    background: linear-gradient(135deg, #c82333 0%, #9c1c26 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(220, 53, 69, 0.3);
+}
+
+/* الأيقونات */
+.material-symbols-outlined {
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+/* للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .cart-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .checkout-btn,
+    .contact-btn,
+    .clear-cart-btn {
+        width: 100%;
+        min-width: auto;
+        padding: 16px 20px;
+    }
+}
     </style>
 </head>
 
@@ -2806,33 +2894,39 @@ body[dir="rtl"] .nav-paypal {
     </div>
 
     <!-- Cart Modal -->
-    <div class="cart-modal" id="cartModal">
-        <div class="cart-modal-content">
-            <div class="cart-modal-header">
-                <h3 class="cart-modal-title">Your Shopping Cart</h3>
-                <button class="close-cart-modal" id="closeCartModalBtn">&times;</button>
+   <div class="cart-modal" id="cartModal">
+    <div class="cart-modal-content">
+        <div class="cart-modal-header">
+            <h3 class="cart-modal-title">Your Shopping Cart</h3>
+            <button class="close-cart-modal" id="closeCartModalBtn">&times;</button>
+        </div>
+        <div class="cart-modal-body">
+            <div id="cartItemsContainer">
+                <!-- Cart items will be dynamically added here -->
             </div>
-            <div class="cart-modal-body">
-                <div id="cartItemsContainer">
-                    <!-- Cart items will be dynamically added here -->
-                </div>
+        </div>
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span class="total-label">Total:</span>
+                <span class="total-amount" id="cartTotalAmount"></span>
             </div>
-            <div class="cart-summary">
-                <div class="cart-total">
-                    <span class="total-label">Total:</span>
-                    <span class="total-amount" id="cartTotalAmount"></span>
-                </div>
-                <div class="cart-actions">
-                    <button class="checkout-btn" id="checkoutBtn">
-                        <span class="material-symbols-outlined">shopping_cart_checkout</span>
-                        Proceed to Checkout
-                    </button>
-                    <button class="clear-cart-btn" id="clearCartBtn">Clear Cart</button>
-                </div>
+            <div class="cart-actions">
+                <!-- زر PayPal - غيّر من <a> إلى <button> -->
+                <button class="checkout-btn paypal-btn" id="paypalBtn">
+                    Pay with PayPal
+                </button>
+                
+                <!-- زر Contact -->
+                <button class="checkout-btn contact-btn" id="contactBtn">
+                    Contact Us
+                </button>
+                
+                <!-- زر Clear Cart -->
+                <button class="clear-cart-btn" id="clearCartBtn">Clear Cart</button>
             </div>
         </div>
     </div>
-
+</div>
     <!-- Service Modal -->
     <div class="service-modal" id="serviceModal">
         <div class="service-modal-content">
@@ -2885,12 +2979,15 @@ body[dir="rtl"] .nav-paypal {
 </button>
 <!-- زر PayPal في الديسكتوب -->
 <!-- زر PayPal للديسكتوب -->
-<a href="https://www.paypal.com/donate?hosted_button_id=AQs2PNirMq0WBuUZDrcSJSk79FA1hrT_-nPbDrUiScA7irHx8PhpoaeYSctEPRSJxTo7S_WsFEsKkdIq" 
-   class="nav-paypal" 
-   target="_blank">
-    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
-    PayPal
+<a href="https://www.paypal.me/AsmaaAlbaz"
+   class="nav-paypal"
+   target="_blank"
+   rel="noopener noreferrer">
+   Pay with PayPal
 </a>
+
+
+
                     <button class="nav-cart" id="cartBtn">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="cart-badge" id="cartCount">0</span>
@@ -2931,13 +3028,13 @@ body[dir="rtl"] .nav-paypal {
 </button>
 <!-- زر PayPal في الموبايل -->
 <!-- زر PayPal للموبايل -->
-<a href="https://www.paypal.com/donate?hosted_button_id=AQs2PNirMq0WBuUZDrcSJSk79FA1hrT_-nPbDrUiScA7irHx8PhpoaeYSctEPRSJxTo7S_WsFEsKkdIq" 
-   class="nav-paypal" 
+<a href="https://www.paypal.me/AsmaaAlbaz"
+   class="nav-paypal"
    target="_blank"
-   style="justify-content: center; margin: 8px 0;">
-    <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal">
-    Donate via PayPal
+   rel="noopener noreferrer">
+   Pay with PayPal
 </a>
+
             </div>
         </div>
 
@@ -4786,6 +4883,57 @@ document.addEventListener('DOMContentLoaded', function() {
     // تهيئة اللغة عند تحميل الصفحة
     initializeLanguage();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // ابحث عن زر PayPal واضف له وظيفة النقر
+    const paypalBtn = document.getElementById('paypalBtn');
+    
+    if (paypalBtn) {
+        paypalBtn.addEventListener('click', function() {
+            // افتح رابط PayPal في نافذة جديدة
+            window.open(
+                'https://www.paypal.me/AsmaaAlbaz', 
+                '_blank', 
+                'noopener,noreferrer'
+            );
+        });
+    }
+});
+// زر Contact في صفحة العربة
+document.addEventListener('DOMContentLoaded', function() {
+    const contactBtn = document.getElementById('contactBtn');
+    if (contactBtn) {
+        contactBtn.addEventListener('click', function() {
+            // رابط صفحة الكونتكت مع hash للقسم المطلوب
+            window.location.href = 'contact.html#email-form';
+        });
+    }
+});
+
+    
 </script>
 </body>
 </html>
