@@ -104,14 +104,16 @@
             margin: 0;
         }
 
-        .hero-title {
-            font-size: 10px;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-            color: rgb(0, 0, 0);
-
-        }
+       .hero-title {
+    font-size: 3rem; /* أو أي حجم تريده */
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    /* color: #e99700;  */
+    color: #000000;
+    font-family: 'Playfair Display', serif !important; /* نفس خط العناوين */
+    text-shadow: 2px 2px 8px rgb(255, 153, 0); /* ظل للنص */
+}
 
 
 
@@ -1671,6 +1673,7 @@ body[dir="rtl"] .nav-paypal {
 }
     </style>
 </head>
+
 <body class="dark">
     <!-- Scroll Indicator -->
     <div class="scroll-indicator">
@@ -1679,7 +1682,7 @@ body[dir="rtl"] .nav-paypal {
 
     <!-- WhatsApp Float Button -->
     <a href="https://wa.me/447470631885" class="whatsapp-float" target="_blank">
-       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
 
     <!-- Modal for Full Bio -->
@@ -1717,19 +1720,16 @@ body[dir="rtl"] .nav-paypal {
                         <a class="nav-link" href="portofolio.html" id="portfolioLink">Portfolio</a>
                         <a class="nav-link" href="About.html" id="aboutLink">About Us</a>
                         <a class="nav-link" href="Contact.html" id="contactLink">Contact</a>
-                        
+
                         <!-- زر تبديل اللغة -->
                         <button id="langToggle" class="lang-btn">
                             <span class="material-symbols-outlined">language</span>
                             <span id="langText">EN</span>
                         </button>
-<!-- زر PayPal للديسكتوب -->
-<a href="https://www.paypal.me/AsmaaAlbaz"
-   class="nav-paypal"
-   target="_blank"
-   rel="noopener noreferrer">
-   Pay with PayPal
-</a>
+                        <!-- زر PayPal للديسكتوب -->
+                        <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                            Pay with PayPal
+                        </a>
                         <!-- زر السلة -->
                         <button class="nav-cart" id="cartBtn">
                             <span class="material-symbols-outlined">shopping_cart</span>
@@ -1777,25 +1777,22 @@ body[dir="rtl"] .nav-paypal {
                         <span class="material-symbols-outlined" style="margin-right: 10px;">mail</span>
                         <span id="mobileContactLink">Contact</span>
                     </a>
-                    
+
                     <!-- زر تبديل اللغة في الموبايل -->
                     <button class="mobile-nav-link" id="mobileLangToggle" style="cursor: pointer; text-align: left; background: none; border: none; width: 100%;">
                         <span class="material-symbols-outlined" style="margin-right: 10px;">language</span>
                         <span id="mobileLangText">English / عربي</span>
                     </button>
-<!-- زر PayPal للموبايل -->
-<a href="https://www.paypal.me/AsmaaAlbaz"
-   class="nav-paypal"
-   target="_blank"
-   rel="noopener noreferrer">
-   Pay with PayPal
-</a>
+                    <!-- زر PayPal للموبايل -->
+                    <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                        Pay with PayPal
+                    </a>
                     <!-- زر السلة للموبايل -->
                     <button class="mobile-nav-link nav-cart" id="mobileCartBtn">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span id="mobileCartText">Cart</span> (<span id="mobileCartCount">0</span>)
                     </button>
-                    
+
                     <!-- زر تسجيل الدخول/الخوء للموبايل -->
                     <a class="mobile-nav-link" onclick="toggleAuth()" style="cursor: pointer;">
                         <span class="material-symbols-outlined" style="margin-right: 10px;">login</span>
@@ -1979,22 +1976,18 @@ body[dir="rtl"] .nav-paypal {
                     <div class="social-links">
                         <a class="social-link" href="#" onclick="showNotification('Opening Facebook...')">
                             <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path clip-rule="evenodd"
-                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                                    fill-rule="evenodd"></path>
+                                <path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path>
                             </svg>
                         </a>
                         <a class="social-link" href="#" onclick="showNotification('Opening Twitter...')">
                             <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84">
                                 </path>
                             </svg>
                         </a>
                         <a class="social-link" href="#" onclick="showNotification('Opening Instagram...')">
                             <svg aria-hidden="true" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z">
                                 </path>
                             </svg>
                         </a>
