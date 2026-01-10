@@ -2158,10 +2158,9 @@
         <nav class="nav-desktop">
             <div class="nav-links">
                 <a class="nav-link" href="Home.html" id="homeLink">Home</a>
-                <a class="nav-link" href="Services.html" id="servicesLink">Services</a>
-                <a class="nav-link" href="Shop.html" id="shopLink">Shop</a>
-                <a class="nav-link" href="portofolio.html" id="walletLink">Portfolio</a>
-                <a class="nav-link" href="About.html" id="aboutLink">About Us</a>
+                <a class="nav-link" href="eTool Kits.html" id="servicesLink">eTool Kits</a>
+                <a class="nav-link" href="how it works.html" id="walletLink">how it works</a>
+                <a class="nav-link" href="examples.html" id="aboutLink">examples</a>
                 <a class="nav-link" href="Contact.html" id="contactLink">Contact</a>
                 <!-- زر السلة الوحيد للديسكتوب -->
                 <button id="langToggle" class="lang-btn">
@@ -2200,37 +2199,40 @@
     </header>
 
 
-    <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-        <a class="nav-link" href="Home.html" id="mobileHomeLink">Home</a>
-        <a class="nav-link active" href="Services.html" id="mobileServicesLink">Services</a>
-        <a class="nav-link" href="Shop.html" id="mobileShopLink">Shop</a>
-        <a class="nav-link" href="portofolio.html" id="mobilePortfolioLink">Portfolio</a>
-        <a class="nav-link" href="About.html" id="mobileAboutLink">About Us</a>
-        <a class="nav-link" href="Contact.html" id="mobileContactLink">Contact</a>
+    <a class="nav-link" href="Home.html" id="mobileHomeLink">Home</a>
+    <a class="nav-link active" href="eTool Kits.html" id="mobileServicesLink">eTool Kits</a> <!-- هذا الصح -->
+    <a class="nav-link" href="how it works.html" id="mobilePortfolioLink">how it works</a> <!-- هذا الصح -->
+    <a class="nav-link" href="examples.html" id="mobileAboutLink">examples</a> <!-- هذا الصح -->
+    <a class="nav-link" href="Contact.html" id="mobileContactLink">Contact</a>
 
-        <!-- زر السلة في الموبايل -->
-        <button class="nav-cart" id="mobileCartBtn">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            <span class="cart-badge" id="mobileCartCount">0</span>
-        </button>
+    <!-- زر السلة في الموبايل -->
+    <button class="nav-cart" id="mobileCartBtn">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span class="cart-badge" id="mobileCartCount">0</span>
+    </button>
 
-        <!-- زر الترجمة في الموبايل -->
-        <button id="mobileLangToggle" class="lang-btn">
-            <span class="material-symbols-outlined">language</span>
-            <span id="mobileLangText">EN</span>
-        </button>
-        <!-- زر PayPal للموبايل -->
-        <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
-            Pay with PayPal
-        </a>
-        <!-- زر تسجيل الدخول في الموبايل -->
-        <a class="nav-link" onclick="toggleAuth()" id="mobileAuthLink">
-            <span id="mobileAuthText">
-                <script>
-                    document.write(localStorage.getItem('currentUser') ? 'Logout' : 'Login');
-                </script>
-            </span>
+    <!-- زر الترجمة في الموبايل -->
+    <button id="mobileLangToggle" class="lang-btn">
+        <span class="material-symbols-outlined">language</span>
+        <span id="mobileLangText">EN</span>
+    </button>
+    
+    <!-- زر PayPal للموبايل -->
+    <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+        Pay with PayPal
+    </a>
+    
+    <!-- زر تسجيل الدخول في الموبايل -->
+    <a class="nav-link" onclick="toggleAuth()" id="mobileAuthLink">
+        <span id="mobileAuthText">
+            <script>
+                document.write(localStorage.getItem('currentUser') ? 'Logout' : 'Login');
+            </script>
+        </span>
+    </a>
+</div>
+        
         </a>
     </div>
 
@@ -2708,11 +2710,10 @@
             <div class="footer-column">
                 <h3 class="footer-title">Sitemap</h3>
                 <div class="footer-links">
-                    <a class="footer-link" href="Services.html">Services</a>
-                    <a class="footer-link" href="Shop.html">Shop</a>
-                    <a class="footer-link" href="About.html">About Us</a>
+                    <a class="footer-link" href="eTool Kits.html">eTool Kits</a>
+                    <a class="footer-link" href="examples.html">examples</a>
                     <a class="footer-link" href="Contact.html">Contact</a>
-                    <a class="footer-link" href="portofolio.html">portofolio</a>
+                    <a class="footer-link" href="how it works.html">how it works</a>
                 </div>
             </div>
 
@@ -2749,7 +2750,7 @@
             </div>
         </div>
     </footer>
-    <script src="./js/Services.js"></script>
+    <script src="./js/eTooI Kits.js"></script>
   
 
 <script>
@@ -2787,26 +2788,22 @@
 
 // ========== LANGUAGE TOGGLE FUNCTIONALITY ==========
 
-// تعريف المتغيرات والدوال بشكل صحيح
 let currentLang = localStorage.getItem('siteLanguage') || 'en';
-let langToggleBtn = null;
-let langText = null;
 
 // الترجمة الإنجليزية
 const englishTexts = {
-    // Navigation
+    // Navigation - المهم
     home: "Home",
-    services: "Services",
-    shop: "Shop",
-    portfolio: "Portfolio",
-    about: "About Us",
+    eTooLKits: "eTool Kits",
+    howitworks: "How It Works",
+    examples: "Examples",
     contact: "Contact",
     login: "Login",
     logout: "Logout",
     cart: "Cart",
     
     // Hero Section
-    ProfessionalArchitectureSupportYouCanBookDirectly: "Professional Architecture Support You Can Book Directly",
+    ProfessionalArchitectureSupportYouCanBookDirectly: "OUR SERVICES MISSION AND VSION NEEDS TO BE CLEAREER  ",
     heroDescription: "We offer a range of specialized architectural services to bring your vision to life, from initial concept to final execution. Professional quality with student-friendly pricing.",
     exploreServices: "Explore Services",
     contactUs: "Contact Us",
@@ -2898,14 +2895,12 @@ const englishTexts = {
     aboutText: "Crafting spaces that inspire. We are an award-winning architectural firm dedicated to innovative and sustainable design."
 };
 
-// الترجمة العربية
 const arabicTexts = {
-    // Navigation
+    // Navigation - المهم
     home: "الرئيسية",
-    services: "الخدمات",
-    shop: "المتجر",
-    portfolio: "الأعمال",
-    about: "من نحن",
+    eTooLKits: "الأدوات الإلكترونية",
+    howitworks: "كيف يعمل",
+    examples: "الأمثلة",
     contact: "اتصل بنا",
     login: "تسجيل الدخول",
     logout: "تسجيل الخروج",
@@ -3048,21 +3043,22 @@ function updateElementTextInCard(card, selector, text, keepHTML = false) {
 }
 
 // تحديث نصوص التنقل
+// تحديث نصوص التنقل
 function updateNavigationTexts(texts) {
+    console.log('Updating navigation with:', texts);
+    
     // روابط التنقل الرئيسية
     updateElementText('#homeLink', texts.home);
-    updateElementText('#servicesLink', texts.services);
-    updateElementText('#shopLink', texts.shop);
-    updateElementText('#walletLink', texts.portfolio);
-    updateElementText('#aboutLink', texts.about);
+    updateElementText('#servicesLink', texts.eTooLKits);    // 👈 صحح هنا
+    updateElementText('#walletLink', texts.howitworks);     // 👈 صحح هنا
+    updateElementText('#aboutLink', texts.examples);        // 👈 صحح هنا
     updateElementText('#contactLink', texts.contact);
     
     // روابط التنقل الموبايل
     updateElementText('#mobileHomeLink', texts.home);
-    updateElementText('#mobileServicesLink', texts.services);
-    updateElementText('#mobileShopLink', texts.shop);
-    updateElementText('#mobilePortfolioLink', texts.portfolio);
-    updateElementText('#mobileAboutLink', texts.about);
+    updateElementText('#mobileServicesLink', texts.eTooLKits);    // 👈 صحح هنا
+    updateElementText('#mobilePortfolioLink', texts.howitworks);   // 👈 صحح هنا
+    updateElementText('#mobileAboutLink', texts.examples);         // 👈 صحح هنا
     updateElementText('#mobileContactLink', texts.contact);
     
     // زر تسجيل الدخول
@@ -3081,6 +3077,22 @@ function updateNavigationTexts(texts) {
     updateElementText('#cartBtn', texts.cart, true);
     updateElementText('#mobileCartBtn', texts.cart, true);
 }
+    // زر تسجيل الدخول
+    const authTextElement = document.getElementById('authText');
+    const mobileAuthTextElement = document.getElementById('mobileAuthText');
+    const isLoggedIn = localStorage.getItem('currentUser');
+    
+    if (authTextElement) {
+        authTextElement.textContent = isLoggedIn ? texts.logout : texts.login;
+    }
+    if (mobileAuthTextElement) {
+        mobileAuthTextElement.textContent = isLoggedIn ? texts.logout : texts.login;
+    }
+    
+    // زر السلة
+    updateElementText('#cartBtn', texts.cart, true);
+    updateElementText('#mobileCartBtn', texts.cart, true);
+
 
 // تحديث نصوص الـ Hero
 function updateHeroTexts(texts) {

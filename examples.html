@@ -104,18 +104,15 @@
             margin: 0;
         }
 
-       .hero-title {
-    font-size: 3rem; /* أو أي حجم تريده */
+.hero-title {
+    font-size: 1.8rem; /* حجم مناسب */
     line-height: 1.2;
     margin-bottom: 1.5rem;
     font-weight: 700;
-    /* color: #e99700;  */
     color: #000000;
-    font-family: 'Playfair Display', serif !important; /* نفس خط العناوين */
-    text-shadow: 2px 2px 8px rgb(255, 153, 0); /* ظل للنص */
+    font-family: 'Playfair Display', serif !important;
+    text-shadow: 2px 2px 4px rgba(255, 153, 0, 0.788);
 }
-
-
 
 
         @media (min-width: 768px) {
@@ -1621,56 +1618,54 @@ color: #e99700;        }
             margin-left: 10px;
         }
 
-
-
-
         #founderSection {
-    display: flex;
-    justify-content: center;
-}
+            display: flex;
+            justify-content: center;
+        }
 
-#founderSection .section-content {
-    text-align: center;
-}
-/* زر PayPal نظيف */
-.nav-paypal {
-    background: #003087;
-    border-radius: 6px;
-    padding: 8px 12px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
-    transition: 0.2s;
-    border: 2px solid transparent;
-}
+        #founderSection .section-content {
+            text-align: center;
+        }
+        
+        /* زر PayPal نظيف */
+        .nav-paypal {
+            background: #003087;
+            border-radius: 6px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.2s;
+            border: 2px solid transparent;
+        }
 
-.nav-paypal:hover {
-    background: #002569;
-    border-color: #d69600;
-    transform: translateY(-1px);
-}
+        .nav-paypal:hover {
+            background: #002569;
+            border-color: #d69600;
+            transform: translateY(-1px);
+        }
 
-.nav-paypal img {
-    width: 18px;
-    height: auto;
-}
+        .nav-paypal img {
+            width: 18px;
+            height: auto;
+        }
 
-/* للغة العربية */
-body[dir="rtl"] .nav-paypal {
-    flex-direction: row-reverse;
-}
+        /* للغة العربية */
+        body[dir="rtl"] .nav-paypal {
+            flex-direction: row-reverse;
+        }
 
-/* في الموبايل */
-.mobile-nav .nav-paypal {
-    width: 100%;
-    justify-content: center;
-    margin: 8px 0;
-    padding: 10px;
-}
+        /* في الموبايل */
+        .mobile-nav .nav-paypal {
+            width: 100%;
+            justify-content: center;
+            margin: 8px 0;
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -1693,7 +1688,7 @@ body[dir="rtl"] .nav-paypal {
             </button>
             <h2 class="modal-title" id="bioModalTitle">Delivered by Our London Team</h2>
             <div class="modal-text" id="bioModalContent">
-                <p id="bioModalText">Our studio is a team of architects, interior designers, visualisers, graphic designers, and AI artists, creating curated digital tools, templates, 3D models, and full courses to help students and early-career professionals save time, improve skills, and produce professional-quality work. Team Expertise (Multi-Discipline & Modern) Architects: Experienced in Revit, AutoCAD, Rhino, and professional practice. Interior Designers: Specialising in 3D modelling, rendering, and presentation. Visualisers & AI Artists: Creating photorealistic renders, architectural visual storytelling, and AI-assisted design assets. Tutors & Educators: Skilled in portfolio reviews, course creation, and personalised student guidance. Digital Asset Creators: Producing ready-to-use templates, 3D models, blueprint packs, and full software courses.</p>
+                <p id="bioModalText">is a digital-first platform providing complete branding and design solutions for businesses, startups, and entrepreneurs. We focus on delivering clean, professional, and results-driven design services that help brands communicate clearly and confidently. Our approach combines creative expertise with practical business understanding, ensuring that every visual asset — from logos and banners to websites and social media templates — aligns with your brands goals and audience.</p>
             </div>
             <button class="btn btn-primary" id="closeModalBtn">
                 <span class="material-symbols-outlined">check</span>
@@ -1715,10 +1710,9 @@ body[dir="rtl"] .nav-paypal {
                 <nav class="nav-desktop">
                     <div class="nav-links">
                         <a class="nav-link" href="Home.html" id="homeLink">Home</a>
-                        <a class="nav-link" href="Services.html" id="servicesLink">Services</a>
-                        <a class="nav-link" href="Shop.html" id="shopLink">Shop</a>
-                        <a class="nav-link" href="portofolio.html" id="portfolioLink">Portfolio</a>
-                        <a class="nav-link" href="About.html" id="aboutLink">About Us</a>
+                        <a class="nav-link" href="Services.html" id="servicesLink">eTool Kits</a>
+                        <a class="nav-link" href="Shop.html" id="walletLink">How It Works</a>
+                        <a class="nav-link" href="portofolio.html" id="aboutLink">Examples</a>
                         <a class="nav-link" href="Contact.html" id="contactLink">Contact</a>
 
                         <!-- زر تبديل اللغة -->
@@ -1726,18 +1720,21 @@ body[dir="rtl"] .nav-paypal {
                             <span class="material-symbols-outlined">language</span>
                             <span id="langText">EN</span>
                         </button>
+                        
                         <!-- زر PayPal للديسكتوب -->
-                        <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.paypal.me/asmaalbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
                             Pay with PayPal
                         </a>
+                        
                         <!-- زر السلة -->
                         <button class="nav-cart" id="cartBtn">
                             <span class="material-symbols-outlined">shopping_cart</span>
+                            <span>Cart</span>
                             <span class="cart-badge" id="cartCount">0</span>
                         </button>
 
                         <!-- زر تسجيل الدخول/الخروج -->
-                        <a class="nav-link" onclick="toggleAuth()" id="authLink">
+                        <a class="nav-link" onclick="toggleAuth()" id="authLink" style="cursor: pointer;">
                             <span id="authText">Login</span>
                         </a>
                     </div>
@@ -1759,19 +1756,15 @@ body[dir="rtl"] .nav-paypal {
                     </a>
                     <a class="mobile-nav-link" href="Services.html">
                         <span class="material-symbols-outlined" style="margin-right: 10px;">design_services</span>
-                        <span id="mobileServicesLink">Services</span>
+                        <span id="mobileServicesLink">eTool Kits</span>
                     </a>
                     <a class="mobile-nav-link" href="Shop.html">
-                        <span class="material-symbols-outlined" style="margin-right: 10px;">shopping_bag</span>
-                        <span id="mobileShopLink">Shop</span>
+                        <span class="material-symbols-outlined" style="margin-right: 10px;">info</span>
+                        <span id="mobileWalletLink">How It Works</span>
                     </a>
                     <a class="mobile-nav-link" href="portofolio.html">
                         <span class="material-symbols-outlined" style="margin-right: 10px;">collections</span>
-                        <span id="mobilePortfolioLink">Portfolio</span>
-                    </a>
-                    <a class="mobile-nav-link" href="About.html">
-                        <span class="material-symbols-outlined" style="margin-right: 10px;">info</span>
-                        <span id="mobileAboutLink">About Us</span>
+                        <span id="mobileAboutLink">Examples</span>
                     </a>
                     <a class="mobile-nav-link" href="Contact.html">
                         <span class="material-symbols-outlined" style="margin-right: 10px;">mail</span>
@@ -1783,12 +1776,14 @@ body[dir="rtl"] .nav-paypal {
                         <span class="material-symbols-outlined" style="margin-right: 10px;">language</span>
                         <span id="mobileLangText">English / عربي</span>
                     </button>
+                    
                     <!-- زر PayPal للموبايل -->
-                    <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.paypal.me/asmaalbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer" style="margin: 8px 0;">
                         Pay with PayPal
                     </a>
+                    
                     <!-- زر السلة للموبايل -->
-                    <button class="mobile-nav-link nav-cart" id="mobileCartBtn">
+                    <button class="mobile-nav-link nav-cart" id="mobileCartBtn" style="cursor: pointer;">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span id="mobileCartText">Cart</span> (<span id="mobileCartCount">0</span>)
                     </button>
@@ -1814,9 +1809,9 @@ body[dir="rtl"] .nav-paypal {
                 <!-- Founder's Biography Section -->
                 <section class="section" id="founderSection">
                     <div class="section-content">
-                        <h2 class="section-title" id="ourStoryTitle">Our Story</h2>
+                        <h2 class="section-title" id="ourStoryTitle">About BrandsToolkit </h2>
                         <p class="section-text" id="ourStoryText">
-                            Professional architectural support for students and young designers. High‑quality renders, 3D modelling, diagrams, and full project assistance—directed by a London architect with 10+ years' experience. Affordable pricing, premium quality, 48‑hour delivery.
+                            Professional Branding and Digital Design for Modern Businesses BrandsToolkit
                         </p>
                         <button class="btn btn-outline" id="readBioBtn">
                             <span class="material-symbols-outlined">menu_book</span>
@@ -1839,7 +1834,7 @@ body[dir="rtl"] .nav-paypal {
                             <div class="card-content">
                                 <h3 class="card-title" id="missionTitle">Our Mission</h3>
                                 <p class="card-text short-text" id="missionText">
-                                    Providing professional, fast, and flexible architectural services through an easy-to-use platform, with expert follow-up, and achieving efficiency through a global team.
+                                    Experience & Expertise Our team has extensive experience in creating cohesive brand identities and digital visuals that work across multiple platforms. We combine creative vision with business insight to ensure that every design supports your brand’s growth and professional image.  
                                 </p>
                             </div>
                         </div>
@@ -1850,7 +1845,7 @@ body[dir="rtl"] .nav-paypal {
                             <div class="card-content">
                                 <h3 class="card-title" id="visionTitle">Our Vision</h3>
                                 <p class="card-text short-text" id="visionText">
-                                    OUR VISION: To empower the next generation of architects and designers by providing high-quality digital tools, courses, and real-time guidance that make professional-grade skills accessible.
+                                    Our Approach Clear and modern visual solutions Defined deliverables and professional output Fast and reliable delivery Focused on real business impact BrandsToolkit is not a design portfolio; it operates as a service-based platform, providing practical, actionable branding solutions.  
                                 </p>
                             </div>
                         </div>
@@ -1861,7 +1856,7 @@ body[dir="rtl"] .nav-paypal {
                             <div class="card-content">
                                 <h3 class="card-title" id="objectiveTitle">Our Objective</h3>
                                 <p class="card-text short-text" id="objectiveText">
-                                    To deliver curated digital assets and bookable services that save learners time, improve technical skills, and help them create professional-quality work.
+                                    Who We Work With BrandsToolkit supports: Small businesses and startups Online brands and entrepreneurs Service-based businesses and personal brands Our clients value professional, high-quality designs that can be implemented immediately to grow their brand presence.  
                                 </p>
                             </div>
                         </div>
@@ -1925,7 +1920,7 @@ body[dir="rtl"] .nav-paypal {
                         Explore our portfolio to see how we transform visions into reality, or contact us to start a conversation about your next project.
                     </p>
                     <div class="cta-buttons">
-                        <a href="portofolio.html" class="btn btn-primary">
+                        <a href="how it works.html" class="btn btn-primary">
                             <span class="material-symbols-outlined">collections</span>
                             <span id="viewWorkBtn">View Our Work</span>
                         </a>
@@ -1953,11 +1948,11 @@ body[dir="rtl"] .nav-paypal {
                     <div class="footer-column">
                         <h3 class="footer-title" id="sitemapTitle">Sitemap</h3>
                         <div class="footer-links">
-                            <a class="footer-link" href="Services.html" id="footerServicesLink">Services</a>
-                            <a class="footer-link" href="Shop.html" id="footerShopLink">Shop</a>
-                            <a class="footer-link" href="About.html" id="footerAboutLink">About Us</a>
+                            <a class="footer-link" href="eTool Kits.html" id="footerServicesLink">eTool Kits</a>
+                            <a class="footer-link" href="examples.html" id="footerShopLink">examples</a>
+                            <a class="footer-link" href="how it works.html" id="footerAboutLink">how it works</a>
                             <a class="footer-link" href="Contact.html" id="footerContactLink">Contact</a>
-                            <a class="footer-link" href="portofolio.html" id="footerPortfolioLink">Portfolio</a>
+                            <a class="footer-link" href="Home.html" id="footerPortfolioLink">Home</a>
                         </div>
                     </div>
 
@@ -1998,154 +1993,175 @@ body[dir="rtl"] .nav-paypal {
     </div>
 
     <script>
-        // ========== اللغة الافتراضية ==========
+        // ========== LANGUAGE MANAGEMENT ==========
         let currentLang = localStorage.getItem('siteLanguage') || 'en';
 
-        // ========== النصوص الإنجليزية ==========
-        const englishTexts = {
-            // Navigation
-            home: "Home",
-            services: "Services",
-            shop: "Shop",
-            portfolio: "Portfolio",
-            about: "About Us",
-            contact: "Contact",
-            login: "Login",
-            logout: "Logout",
-            cart: "Cart",
-            
-            // Hero Section
-            heroTitle: "Clear ideas. Strong architecture.",
-            
-            // Our Story Section
-            ourStoryTitle: "Our Story",
-            ourStoryText: "Professional architectural support for students and young designers. High‑quality renders, 3D modelling, diagrams, and full project assistance—directed by a London architect with 10+ years' experience. Affordable pricing, premium quality, 48‑hour delivery.",
-            readFullBio: "Read Full Bio",
-            
-            // About Us Section
-            aboutUsTitle: "About Us",
-            aboutUsDesc: "We are a leading platform in providing architectural services supported by a global team of experts and professionals",
-            
-            missionTitle: "Our Mission",
-            missionText: "Providing professional, fast, and flexible architectural services through an easy-to-use platform, with expert follow-up, and achieving efficiency through a global team.",
-            
-            visionTitle: "Our Vision",
-            visionText: "OUR VISION: To empower the next generation of architects and designers by providing high-quality digital tools, courses, and real-time guidance that make professional-grade skills accessible.",
-            
-            objectiveTitle: "Our Objective",
-            objectiveText: "To deliver curated digital assets and bookable services that save learners time, improve technical skills, and help them create professional-quality work.",
-            
-            // FAQ Section
-            faqTitle: "Frequently Asked Questions",
-            faqQuestion1: "How can I request an architectural service from the platform?",
-            faqAnswer1: "You can request an architectural service by registering on the platform, then selecting the desired service from the menu, and submitting your project details. Our team will contact you within 24 hours.",
-            faqQuestion2: "Does the platform offer services for students?",
-            faqAnswer2: "Yes, we offer special discounts for architecture students, in addition to consulting and design services that help them with their academic projects and skill development.",
-            faqQuestion3: "What is the timeframe for completing an architectural project?",
-            faqAnswer3: "The completion timeframe varies depending on the size and complexity of the project. It typically ranges from one week for simple projects to several months for large projects. We guarantee a clear timeline from the beginning.",
-            faqQuestion4: "How is the quality of the designs ensured?",
-            faqAnswer4: "We work with a global team of certified architects, and all designs undergo multiple review stages to ensure high quality and compliance with industry standards.",
-            
-            // CTA Section
-            ctaTitle: "Ready to build the future?",
-            ctaText: "Explore our portfolio to see how we transform visions into reality, or contact us to start a conversation about your next project.",
-            viewWorkBtn: "View Our Work",
-            contactUsBtn: "Contact Us",
-            
-            // Bio Modal
-            bioModalTitle: "Delivered by Our London Team",
-            bioModalText: "Our studio is a team of architects, interior designers, visualisers, graphic designers, and AI artists, creating curated digital tools, templates, 3D models, and full courses to help students and early-career professionals save time, improve skills, and produce professional-quality work. Team Expertise (Multi-Discipline & Modern) Architects: Experienced in Revit, AutoCAD, Rhino, and professional practice. Interior Designers: Specialising in 3D modelling, rendering, and presentation. Visualisers & AI Artists: Creating photorealistic renders, architectural visual storytelling, and AI-assisted design assets. Tutors & Educators: Skilled in portfolio reviews, course creation, and personalised student guidance. Digital Asset Creators: Producing ready-to-use templates, 3D models, blueprint packs, and full software courses.",
-            closeBioBtn: "Close Biography",
-            
-            // Footer
-            sitemapTitle: "Sitemap",
-            contactUsTitle: "Contact Us",
-            footerAddress: "Address: 10 Downing Street, London, UK",
-            footerEmail: "contact@archstone.com",
-            footerPhone: "+44 7470 631885",
-            
-            // Language Button
-            languageBtn: "EN",
-            mobileLanguageBtn: "English / عربي"
-        };
-
-        // ========== النصوص العربية ==========
-        const arabicTexts = {
-            // Navigation
-            home: "الرئيسية",
-            services: "الخدمات",
-            shop: "المتجر",
-            portfolio: "الأعمال",
-            about: "من نحن",
-            contact: "اتصل بنا",
-            login: "تسجيل الدخول",
-            logout: "تسجيل الخروج",
-            cart: "السلة",
-            
-            // Hero Section
-            heroTitle: "تصميم بهدف، بناء بنزاهة.",
-            
-            // Our Story Section
-            ourStoryTitle: "قصتنا",
-            ourStoryText: "دعم معماري محترف للطلاب والمصممين الشباب. عروض عالية الجودة، نمذجة ثلاثية الأبعاد، مخططات، ومساعدة كاملة في المشاريع - تحت إشراف مهندس معماري في لندن بخبرة تزيد عن 10 سنوات. أسعار معقولة، جودة ممتازة، تسليم خلال 48 ساعة.",
-            readFullBio: "قراءة السيرة الذاتية الكاملة",
-            
-            // About Us Section
-            aboutUsTitle: "من نحن",
-            aboutUsDesc: "نحن منصة رائدة في تقديم الخدمات المعمارية بدعم من فريق عالمي من الخبراء والمحترفين",
-            
-            missionTitle: "مهمتنا",
-            missionText: "توفير خدمات معمارية احترافية وسريعة ومرنة من خلال منصة سهلة الاستخدام، مع متابعة الخبراء، وتحقيق الكفاءة من خلال فريق عالمي.",
-            
-            visionTitle: "رؤيتنا",
-            visionText: "رؤيتنا: تمكين الجيل القادم من المهندسين المعماريين والمصممين من خلال توفير أدوات رقمية عالية الجودة ودورات وإرشاد فوري يجعل المهارات الاحترافية في متناول الجميع.",
-            
-            objectiveTitle: "هدفنا",
-            objectiveText: "تقديم أصول رقمية مختارة وخدمات قابلة للحجز توفر للمتعلمين الوقت، وتحسن المهارات التقنية، وتساعدهم على إنشاء عمل بجودة احترافية.",
-            
-            // FAQ Section
-            faqTitle: "الأسئلة الشائعة",
-            faqQuestion1: "كيف يمكنني طلب خدمة معمارية من المنصة؟",
-            faqAnswer1: "يمكنك طلب خدمة معمارية عن طريق التسجيل في المنصة، ثم اختيار الخدمة المطلوبة من القائمة، وإرسال تفاصيل مشروعك. سيتواصل فريقنا معك في غضون 24 ساعة.",
-            faqQuestion2: "هل تقدم المنصة خدمات للطلاب؟",
-            faqAnswer2: "نعم، نقدم خصومات خاصة لطلاب الهندسة المعمارية، بالإضافة إلى خدمات الاستشارة والتصميم التي تساعدهم في مشاريعهم الأكاديمية وتطوير المهارات.",
-            faqQuestion3: "ما هو الإطار الزمني لاستكمال مشروع معماري؟",
-            faqAnswer3: "يختلف الإطار الزمني للاستكمال حسب حجم المشروع وتعقيده. عادة ما يتراوح من أسبوع واحد للمشاريع البسيطة إلى عدة أشهر للمشاريع الكبيرة. نضمن جدولاً زمنياً واضحاً من البداية.",
-            faqQuestion4: "كيف يتم ضمان جودة التصميمات؟",
-            faqAnswer4: "نعمل مع فريق عالمي من المهندسين المعماريين المعتمدين، وتخضع جميع التصميمات لمراحل مراجعة متعددة لضمان الجودة العالية والامتثال لمعايير الصناعة.",
-            
-            // CTA Section
-            ctaTitle: "مستعد لبناء المستقبل؟",
-            ctaText: "استكشف أعمالنا لترى كيف نحول الرؤى إلى واقع، أو اتصل بنا لبدء محادثة حول مشروعك القادم.",
-            viewWorkBtn: "عرض أعمالنا",
-            contactUsBtn: "اتصل بنا",
-            
-            // Bio Modal
-            bioModalTitle: "مقدم من فريق لندن",
-            bioModalText: "استوديونا هو فريق من المهندسين المعماريين، مصممي الديكور الداخلي، المصورين، مصممي الجرافيك، وفناني الذكاء الاصطناعي، ننشئ أدوات رقمية مختارة، قوالب، نماذج ثلاثية الأبعاد، ودورات كاملة لمساعدة الطلاب والمحترفين في بداية حياتهم المهنية على توفير الوقت، وتحسين المهارات، وإنتاج عمل بجودة احترافية. خبرة الفريق (متعددة التخصصات وحديثة) المهندسون المعماريون: ذوو خبرة في ريفيت، أوتوكاد، رينو، والممارسة المهنية. مصممو الديكور الداخلي: متخصصون في النمذجة ثلاثية الأبعاد، التصيير، والعرض. المصورون وفناء الذكاء الاصطناعي: إنشاء عروض فوتوغرافية، سرد القصص المرئية المعمارية، وأصول التصميم المدعومة بالذكاء الاصطناعي. المعلمون والمدربون: مهرة في مراجعات المحافظ، إنشاء الدورات، والإرشاد الطلابي الشخصي. منشئو الأصول الرقمية: إنتاج قوالب جاهزة للاستخدام، نماذج ثلاثية الأبعاد، حزم المخططات، ودورات برمجية كاملة.",
-            closeBioBtn: "إغلاق السيرة الذاتية",
-            
-            // Footer
-            sitemapTitle: "خريطة الموقع",
-            contactUsTitle: "اتصل بنا",
-            footerAddress: "العنوان: 10 داونينج ستريت، لندن، المملكة المتحدة",
-            footerEmail: "contact@archstone.com",
-            footerPhone: "+44 7470 631885",
-            
-            // Language Button
-            languageBtn: "AR",
-            mobileLanguageBtn: "العربية / English"
+        const texts = {
+            en: {
+                // Navigation
+                homeLink: "Home",
+                servicesLink: "eTool Kits",
+                walletLink: "How It Works",
+                aboutLink: "Examples",
+                contactLink: "Contact",
+                
+                // Mobile Navigation
+                mobileHomeLink: "Home",
+                mobileServicesLink: "eTool Kits",
+                mobileWalletLink: "How It Works",
+                mobileAboutLink: "Examples",
+                mobileContactLink: "Contact",
+                
+                // Auth
+                login: "Login",
+                logout: "Logout",
+                
+                // Cart
+                cart: "Cart",
+                mobileCartText: "Cart",
+                
+                // Hero Section
+                heroTitle: "Clear ideas. Strong architecture.",
+                
+                // Our Story Section
+                ourStoryTitle: "About BrandsToolkit",
+                ourStoryText: "Professional Branding and Digital Design for Modern Businesses BrandsToolkit ",
+                readFullBio: "Read Full Bio",
+                
+                // About Us Section
+                aboutUsTitle: "About Us",
+                aboutUsDesc: "We are a leading platform in providing architectural services supported by a global team of experts and professionals",
+                
+                missionTitle: "Our Mission",
+                missionText: "Experience & Expertise Our team has extensive experience in creating cohesive brand identities and digital visuals that work across multiple platforms. We combine creative vision with business insight to ensure that every design supports your brand’s growth and professional image.  ",
+                
+                visionTitle: "Our Vision",
+                visionText: "Our Approach Clear and modern visual solutions Defined deliverables and professional output Fast and reliable delivery Focused on real business impact BrandsToolkit is not a design portfolio; it operates as a service-based platform, providing practical, actionable branding solutions.  ",
+                
+                objectiveTitle: "Our Objective",
+                objectiveText: "Who We Work With BrandsToolkit supports: Small businesses and startups Online brands and entrepreneurs Service-based businesses and personal brands Our clients value professional, high-quality designs that can be implemented immediately to grow their brand presence.  ",
+                
+                // FAQ Section
+                faqTitle: "Frequently Asked Questions",
+                faqQuestion1: "What file types do I receive?",
+                faqAnswer1: "You’ll get editable Canva files, PDFs, and high-resolution images suitable for web and print.",
+                faqQuestion2: "Can I customize templates myself? ",
+                faqAnswer2: "Yes. Every kit includes editable files you can update anytime.",
+                faqQuestion3: "How fast is delivery?",
+                faqAnswer3: "Most kits are delivered within 3–7 business days after you submit your brief.",
+                faqQuestion4: "How is the quality of the designs ensured?",
+                faqAnswer4: "We work with a global team of certified architects, and all designs undergo multiple review stages to ensure high quality and compliance with industry standards.",
+                
+                // CTA Section
+                ctaTitle: "Ready to build the future?",
+                ctaText: "Explore our portfolio to see how we transform visions into reality, or contact us to start a conversation about your next project.",
+                viewWorkBtn: "View Our Work",
+                contactUsBtn: "Contact Us",
+                
+                // Bio Modal
+                bioModalTitle: "Delivered by Our London Team",
+                bioModalText: "is a digital-first platform providing complete branding and design solutions for businesses, startups, and entrepreneurs. We focus on delivering clean, professional, and results-driven design services that help brands communicate clearly and confidently. Our approach combines creative expertise with practical business understanding, ensuring that every visual asset — from logos and banners to websites and social media templates — aligns with your brand’s goals and audience.  ",
+                closeBioBtn: "Close Biography",
+                
+                // Footer
+                sitemapTitle: "Sitemap",
+                contactUsTitle: "Contact Us",
+                footerAddress: "Address: 10 Downing Street, London, UK",
+                footerEmail: "contact@archstone.com",
+                footerPhone: "+44 7470 631885",
+                
+                // Language Button
+                languageBtn: "EN",
+                mobileLanguageBtn: "English / عربي"
+            },
+            ar: {
+                // Navigation
+                homeLink: "الرئيسية",
+                servicesLink: "الأدوات الإلكترونية",
+                walletLink: "كيف يعمل",
+                aboutLink: "الأمثلة",
+                contactLink: "اتصل بنا",
+                
+                // Mobile Navigation
+                mobileHomeLink: "الرئيسية",
+                mobileServicesLink: "الأدوات الإلكترونية",
+                mobileWalletLink: "كيف يعمل",
+                mobileAboutLink: "الأمثلة",
+                mobileContactLink: "اتصل بنا",
+                
+                // Auth
+                login: "تسجيل الدخول",
+                logout: "تسجيل الخروج",
+                
+                // Cart
+                cart: "السلة",
+                mobileCartText: "السلة",
+                
+                // Hero Section
+                heroTitle: "تصميم بهدف، بناء بنزاهة.",
+                
+                // Our Story Section
+                ourStoryTitle: "قصتنا",
+                ourStoryText: "دعم معماري محترف للطلاب والمصممين الشباب. عروض عالية الجودة، نمذجة ثلاثية الأبعاد، مخططات، ومساعدة كاملة في المشاريع - تحت إشراف مهندس معماري في لندن بخبرة تزيد عن 10 سنوات. أسعار معقولة، جودة ممتازة، تسليم خلال 48 ساعة.",
+                readFullBio: "قراءة السيرة الذاتية الكاملة",
+                
+                // About Us Section
+                aboutUsTitle: "من نحن",
+                aboutUsDesc: "نحن منصة رائدة في تقديم الخدمات المعمارية بدعم من فريق عالمي من الخبراء والمحترفين",
+                
+                missionTitle: "مهمتنا",
+                missionText: "توفير خدمات معمارية احترافية وسريعة ومرنة من خلال منصة سهلة الاستخدام، مع متابعة الخبراء، وتحقيق الكفاءة من خلال فريق عالمي.",
+                
+                visionTitle: "رؤيتنا",
+                visionText: "رؤيتنا: تمكين الجيل القادم من المهندسين المعماريين والمصممين من خلال توفير أدوات رقمية عالية الجودة ودورات وإرشاد فوري يجعل المهارات الاحترافية في متناول الجميع.",
+                
+                objectiveTitle: "هدفنا",
+                objectiveText: "تقديم أصول رقمية مختارة وخدمات قابلة للحجز توفر للمتعلمين الوقت، وتحسن المهارات التقنية، وتساعدهم على إنشاء عمل بجودة احترافية.",
+                
+                // FAQ Section
+                faqTitle: "الأسئلة الشائعة",
+                faqQuestion1: "كيف يمكنني طلب خدمة معمارية من المنصة؟",
+                faqAnswer1: "يمكنك طلب خدمة معمارية عن طريق التسجيل في المنصة، ثم اختيار الخدمة المطلوبة من القائمة، وإرسال تفاصيل مشروعك. سيتواصل فريقنا معك في غضون 24 ساعة.",
+                faqQuestion2: "هل تقدم المنصة خدمات للطلاب؟",
+                faqAnswer2: "نعم، نقدم خصومات خاصة لطلاب الهندسة المعمارية، بالإضافة إلى خدمات الاستشارة والتصميم التي تساعدهم في مشاريعهم الأكاديمية وتطوير المهارات.",
+                faqQuestion3: "ما هو الإطار الزمني لاستكمال مشروع معماري؟",
+                faqAnswer3: "يختلف الإطار الزمني للاستكمال حسب حجم المشروع وتعقيده. عادة ما يتراوح من أسبوع واحد للمشاريع البسيطة إلى عدة أشهر للمشاريع الكبيرة. نضمن جدولاً زمنياً واضحاً من البداية.",
+                faqQuestion4: "كيف يتم ضمان جودة التصميمات؟",
+                faqAnswer4: "نعمل مع فريق عالمي من المهندسين المعماريين المعتمدين، وتخضع جميع التصميمات لمراحل مراجعة متعددة لضمان الجودة العالية والامتثال لمعايير الصناعة.",
+                
+                // CTA Section
+                ctaTitle: "مستعد لبناء المستقبل؟",
+                ctaText: "استكشف أعمالنا لترى كيف نحول الرؤى إلى واقع، أو اتصل بنا لبدء محادثة حول مشروعك القادم.",
+                viewWorkBtn: "عرض أعمالنا",
+                contactUsBtn: "اتصل بنا",
+                
+                // Bio Modal
+                bioModalTitle: "مقدم من فريق لندن",
+                bioModalText: "استوديونا هو فريق من المهندسين المعماريين، مصممي الديكور الداخلي، المصورين، مصممي الجرافيك، وفناني الذكاء الاصطناعي، ننشئ أدوات رقمية مختارة، قوالب، نماذج ثلاثية الأبعاد، ودورات كاملة لمساعدة الطلاب والمحترفين في بداية حياتهم المهنية على توفير الوقت، وتحسين المهارات، وإنتاج عمل بجودة احترافية. خبرة الفريق (متعددة التخصصات وحديثة) المهندسون المعماريون: ذوو خبرة في ريفيت، أوتوكاد، رينو، والممارسة المهنية. مصممو الديكور الداخلي: متخصصون في النمذجة ثلاثية الأبعاد، التصيير، والعرض. المصورون وفناء الذكاء الاصطناعي: إنشاء عروض فوتوغرافية، سرد القصص المرئية المعمارية، وأصول التصميم المدعومة بالذكاء الاصطناعي. المعلمون والمدربون: مهرة في مراجعات المحافظ، إنشاء الدورات، والإرشاد الطلابي الشخصي. منشئو الأصول الرقمية: إنتاج قوالب جاهزة للاستخدام، نماذج ثلاثية الأبعاد، حزم المخططات، ودورات برمجية كاملة.",
+                closeBioBtn: "إغلاق السيرة الذاتية",
+                
+                // Footer
+                sitemapTitle: "خريطة الموقع",
+                contactUsTitle: "اتصل بنا",
+                footerAddress: "العنوان: 10 داونينج ستريت، لندن، المملكة المتحدة",
+                footerEmail: "contact@archstone.com",
+                footerPhone: "+44 7470 631885",
+                
+                // Language Button
+                languageBtn: "AR",
+                mobileLanguageBtn: "العربية / English"
+            }
         };
 
         // ========== تطبيق اللغة ==========
         function applyLanguage(lang) {
-            const texts = lang === 'ar' ? arabicTexts : englishTexts;
+            const langTexts = texts[lang];
             
             // تغيير اتجاه الصفحة
             document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
             
             // تحديث جميع النصوص
-            updateAllTexts(texts);
+            updateAllTexts(langTexts);
             
             // حفظ اللغة في التخزين المحلي
             localStorage.setItem('siteLanguage', lang);
@@ -2158,195 +2174,147 @@ body[dir="rtl"] .nav-paypal {
             showNotification(lang === 'ar' ? 'تم التبديل إلى العربية' : 'Switched to English');
         }
 
-        // ========== تحديث جميع النصوص ==========
-        function updateAllTexts(texts) {
-            // التنقل الرئيسي
-            document.getElementById('homeLink').textContent = texts.home;
-            document.getElementById('servicesLink').textContent = texts.services;
-            document.getElementById('shopLink').textContent = texts.shop;
-            document.getElementById('portfolioLink').textContent = texts.portfolio;
-            document.getElementById('aboutLink').textContent = texts.about;
-            document.getElementById('contactLink').textContent = texts.contact;
+        function updateAllTexts(langTexts) {
+            // تحديث عناصر النافبار الرئيسية
+            document.getElementById('homeLink').textContent = langTexts.homeLink;
+            document.getElementById('servicesLink').textContent = langTexts.servicesLink;
+            document.getElementById('walletLink').textContent = langTexts.walletLink;
+            document.getElementById('aboutLink').textContent = langTexts.aboutLink;
+            document.getElementById('contactLink').textContent = langTexts.contactLink;
+            
+            // تحديث عناصر الموبايل نافبار
+            document.getElementById('mobileHomeLink').textContent = langTexts.mobileHomeLink;
+            document.getElementById('mobileServicesLink').textContent = langTexts.mobileServicesLink;
+            document.getElementById('mobileWalletLink').textContent = langTexts.mobileWalletLink;
+            document.getElementById('mobileAboutLink').textContent = langTexts.mobileAboutLink;
+            document.getElementById('mobileContactLink').textContent = langTexts.mobileContactLink;
             
             // تحديث حالة تسجيل الدخول
             const isLoggedIn = localStorage.getItem('currentUser');
-            document.getElementById('authText').textContent = isLoggedIn ? texts.logout : texts.login;
+            document.getElementById('authText').textContent = isLoggedIn ? langTexts.logout : langTexts.login;
+            document.getElementById('mobileAuthText').textContent = isLoggedIn ? langTexts.logout : langTexts.login;
             
-            // التنقل في الموبايل
-            document.getElementById('mobileHomeLink').textContent = texts.home;
-            document.getElementById('mobileServicesLink').textContent = texts.services;
-            document.getElementById('mobileShopLink').textContent = texts.shop;
-            document.getElementById('mobilePortfolioLink').textContent = texts.portfolio;
-            document.getElementById('mobileAboutLink').textContent = texts.about;
-            document.getElementById('mobileContactLink').textContent = texts.contact;
-            document.getElementById('mobileAuthText').textContent = isLoggedIn ? texts.logout : texts.login;
-            document.getElementById('mobileCartText').textContent = texts.cart;
-            
-            // الهيرو
-            document.getElementById('heroTitle').textContent = texts.heroTitle;
-            
-            // قسم قصتنا
-            document.getElementById('ourStoryTitle').textContent = texts.ourStoryTitle;
-            document.getElementById('ourStoryText').textContent = texts.ourStoryText;
-            document.getElementById('readBioBtnText').textContent = texts.readFullBio;
-            
-            // قسم من نحن
-            document.getElementById('aboutUsTitle').textContent = texts.aboutUsTitle;
-            document.getElementById('aboutUsDesc').textContent = texts.aboutUsDesc;
-            document.getElementById('missionTitle').textContent = texts.missionTitle;
-            document.getElementById('missionText').textContent = texts.missionText;
-            document.getElementById('visionTitle').textContent = texts.visionTitle;
-            document.getElementById('visionText').textContent = texts.visionText;
-            document.getElementById('objectiveTitle').textContent = texts.objectiveTitle;
-            document.getElementById('objectiveText').textContent = texts.objectiveText;
-            
-            // الأسئلة الشائعة
-            document.getElementById('faqTitle').textContent = texts.faqTitle;
-            document.getElementById('faqQuestion1').textContent = texts.faqQuestion1;
-            document.getElementById('faqAnswer1').textContent = texts.faqAnswer1;
-            document.getElementById('faqQuestion2').textContent = texts.faqQuestion2;
-            document.getElementById('faqAnswer2').textContent = texts.faqAnswer2;
-            document.getElementById('faqQuestion3').textContent = texts.faqQuestion3;
-            document.getElementById('faqAnswer3').textContent = texts.faqAnswer3;
-            document.getElementById('faqQuestion4').textContent = texts.faqQuestion4;
-            document.getElementById('faqAnswer4').textContent = texts.faqAnswer4;
-            
-            // قسم CTA
-            document.getElementById('ctaTitle').textContent = texts.ctaTitle;
-            document.getElementById('ctaText').textContent = texts.ctaText;
-            document.getElementById('viewWorkBtn').textContent = texts.viewWorkBtn;
-            document.getElementById('contactUsBtnText').textContent = texts.contactUsBtn;
-            
-            // المودال
-            document.getElementById('bioModalTitle').textContent = texts.bioModalTitle;
-            document.getElementById('bioModalText').textContent = texts.bioModalText;
-            document.getElementById('closeModalBtnText').textContent = texts.closeBioBtn;
-            
-            // الفوتر
-            document.getElementById('footerAboutText').textContent = texts.footerAboutText;
-            document.getElementById('sitemapTitle').textContent = texts.sitemapTitle;
-            document.getElementById('contactUsTitle').textContent = texts.contactUsTitle;
-            document.getElementById('footerAddress').textContent = texts.footerAddress;
-            document.getElementById('footerEmail').textContent = texts.footerEmail;
-            document.getElementById('footerPhone').textContent = texts.footerPhone;
-            document.getElementById('copyrightText').textContent = texts.copyrightText;
-            
-            // روابط الفوتر
-            document.getElementById('footerServicesLink').textContent = texts.services;
-            document.getElementById('footerShopLink').textContent = texts.shop;
-            document.getElementById('footerAboutLink').textContent = texts.about;
-            document.getElementById('footerContactLink').textContent = texts.contact;
-            document.getElementById('footerPortfolioLink').textContent = texts.portfolio;
-        }
-
-        // ========== تحديث أزرار اللغة ==========
-        function updateLanguageButtons() {
-            const langText = document.getElementById('langText');
-            const mobileLangText = document.getElementById('mobileLangText');
-            
-            if (currentLang === 'ar') {
-                if (langText) langText.textContent = arabicTexts.languageBtn;
-                if (mobileLangText) mobileLangText.textContent = arabicTexts.mobileLanguageBtn;
-            } else {
-                if (langText) langText.textContent = englishTexts.languageBtn;
-                if (mobileLangText) mobileLangText.textContent = englishTexts.mobileLanguageBtn;
+            // تحديث نص السلة
+            const cartBtnText = document.querySelector('#cartBtn span:not(.material-symbols-outlined):not(.cart-badge)');
+            if (cartBtnText) {
+                cartBtnText.textContent = langTexts.cart;
             }
+            document.getElementById('mobileCartText').textContent = langTexts.mobileCartText;
+            
+            // تحديث باقي النصوص
+            document.getElementById('heroTitle').textContent = langTexts.heroTitle;
+            document.getElementById('ourStoryTitle').textContent = langTexts.ourStoryTitle;
+            document.getElementById('ourStoryText').textContent = langTexts.ourStoryText;
+            document.getElementById('readBioBtnText').textContent = langTexts.readFullBio;
+            document.getElementById('aboutUsTitle').textContent = langTexts.aboutUsTitle;
+            document.getElementById('aboutUsDesc').textContent = langTexts.aboutUsDesc;
+            document.getElementById('missionTitle').textContent = langTexts.missionTitle;
+            document.getElementById('missionText').textContent = langTexts.missionText;
+            document.getElementById('visionTitle').textContent = langTexts.visionTitle;
+            document.getElementById('visionText').textContent = langTexts.visionText;
+            document.getElementById('objectiveTitle').textContent = langTexts.objectiveTitle;
+            document.getElementById('objectiveText').textContent = langTexts.objectiveText;
+            document.getElementById('faqTitle').textContent = langTexts.faqTitle;
+            document.getElementById('faqQuestion1').textContent = langTexts.faqQuestion1;
+            document.getElementById('faqAnswer1').textContent = langTexts.faqAnswer1;
+            document.getElementById('faqQuestion2').textContent = langTexts.faqQuestion2;
+            document.getElementById('faqAnswer2').textContent = langTexts.faqAnswer2;
+            document.getElementById('faqQuestion3').textContent = langTexts.faqQuestion3;
+            document.getElementById('faqAnswer3').textContent = langTexts.faqAnswer3;
+            document.getElementById('faqQuestion4').textContent = langTexts.faqQuestion4;
+            document.getElementById('faqAnswer4').textContent = langTexts.faqAnswer4;
+            document.getElementById('ctaTitle').textContent = langTexts.ctaTitle;
+            document.getElementById('ctaText').textContent = langTexts.ctaText;
+            document.getElementById('viewWorkBtn').textContent = langTexts.viewWorkBtn;
+            document.getElementById('contactUsBtnText').textContent = langTexts.contactUsBtn;
+            document.getElementById('bioModalTitle').textContent = langTexts.bioModalTitle;
+            document.getElementById('bioModalText').textContent = langTexts.bioModalText;
+            document.getElementById('closeModalBtnText').textContent = langTexts.closeBioBtn;
+            document.getElementById('sitemapTitle').textContent = langTexts.sitemapTitle;
+            document.getElementById('contactUsTitle').textContent = langTexts.contactUsTitle;
+            document.getElementById('footerAddress').textContent = langTexts.footerAddress;
+            document.getElementById('footerEmail').textContent = langTexts.footerEmail;
+            document.getElementById('footerPhone').textContent = langTexts.footerPhone;
         }
 
-        // ========== تبديل اللغة ==========
+        function updateLanguageButtons() {
+            document.getElementById('langText').textContent = currentLang === 'en' ? 'EN' : 'AR';
+            document.getElementById('mobileLangText').textContent = currentLang === 'en' ? 'English / عربي' : 'العربية / English';
+        }
+
         function toggleLanguage() {
             const newLang = currentLang === 'en' ? 'ar' : 'en';
             applyLanguage(newLang);
         }
 
-        // ========== إظهار الإشعارات ==========
-        function showNotification(message) {
-            // إنشاء عنصر الإشعار
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: rgba(212, 175, 55, 0.9);
-                color: #000;
-                padding: 12px 24px;
-                border-radius: 8px;
-                font-family: 'Inter', sans-serif;
-                font-weight: 600;
-                z-index: 10000;
-                transform: translateX(150%);
-                transition: transform 0.3s ease;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-                max-width: 300px;
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(212, 175, 55, 0.3);
-            `;
-            
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            // إظهار الإشعار
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 10);
-            
-            // إخفاء الإشعار بعد 3 ثوان
-            setTimeout(() => {
-                notification.style.transform = 'translateX(150%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        document.body.removeChild(notification);
-                    }
-                }, 300);
-            }, 3000);
+        // ========== AUTH MANAGEMENT ==========
+        function toggleAuth() {
+            if (localStorage.getItem('currentUser')) {
+                localStorage.removeItem('currentUser');
+                showNotification(currentLang === 'ar' ? 'تم تسجيل الخروج بنجاح' : 'Logged out successfully');
+                updateAuthButtons();
+            } else {
+                window.location.href = 'registar.html';
+            }
         }
 
-        // ========== تهيئة الصفحة ==========
+        function updateAuthButtons() {
+            const isLoggedIn = localStorage.getItem('currentUser');
+            const langTexts = texts[currentLang];
+            
+            document.getElementById('authText').textContent = isLoggedIn ? langTexts.logout : langTexts.login;
+            document.getElementById('mobileAuthText').textContent = isLoggedIn ? langTexts.logout : langTexts.login;
+        }
+
+        // ========== CART MANAGEMENT ==========
+        function updateCartCount() {
+            try {
+                const cart = JSON.parse(localStorage.getItem('servicesCart')) || [];
+                const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+                
+                document.getElementById('cartCount').textContent = totalItems;
+                document.getElementById('mobileCartCount').textContent = totalItems;
+            } catch (error) {
+                console.error('Error updating cart count:', error);
+            }
+        }
+
+        // ========== INITIALIZATION ==========
         document.addEventListener('DOMContentLoaded', function () {
             // تطبيق اللغة الحالية
             applyLanguage(currentLang);
             
             // إعداد أحداث أزرار اللغة
-            const langToggle = document.getElementById('langToggle');
-            const mobileLangToggle = document.getElementById('mobileLangToggle');
+            document.getElementById('langToggle').addEventListener('click', toggleLanguage);
+            document.getElementById('mobileLangToggle').addEventListener('click', toggleLanguage);
             
-            if (langToggle) {
-                langToggle.addEventListener('click', toggleLanguage);
-            }
+            // إعداد زر تسجيل الدخول/الخروج
+            document.getElementById('authLink').addEventListener('click', toggleAuth);
             
-            if (mobileLangToggle) {
-                mobileLangToggle.addEventListener('click', toggleLanguage);
-            }
+            // إعداد Mobile Menu
+            setupMobileMenu();
             
-            // إعداد الأحداث الأخرى
-            setupEventListeners();
-            initScrollAnimations();
-            setupScrollIndicator();
+            // تحديث عدد السلة
             updateCartCount();
-            updateMobileCartCount();
             updateAuthButtons();
-            setupReadMoreModals();
+            
+            // إعداد باقي الأحداث
+            setupEventListeners();
+            
+            // إعداد Scroll Indicator
+            setupScrollIndicator();
+            
+            // إعداد Scroll Animations
+            initScrollAnimations();
+            
+            // إعداد FAQ
             setupFAQ();
         });
 
-        // ========== الوظائف الأخرى ==========
-        let mobileMenu, mobileMenuBtn, readBioBtn, bioModal, closeModal, closeModalBtn;
-        let scrollProgress, cartCount, mobileCartCount, cartBtn, mobileCartBtn;
-
-        function setupEventListeners() {
-            mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            mobileMenu = document.getElementById('mobileMenu');
-            readBioBtn = document.getElementById('readBioBtn');
-            bioModal = document.getElementById('bioModal');
-            closeModal = document.getElementById('closeModal');
-            closeModalBtn = document.getElementById('closeModalBtn');
-            scrollProgress = document.getElementById('scrollProgress');
-            cartCount = document.getElementById('cartCount');
-            mobileCartCount = document.getElementById('mobileCartCount');
-            cartBtn = document.getElementById('cartBtn');
-            mobileCartBtn = document.getElementById('mobileCartBtn');
+        function setupMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
             
-            // قائمة الموبايل
             if (mobileMenuBtn && mobileMenu) {
                 mobileMenuBtn.addEventListener('click', function (e) {
                     e.stopPropagation();
@@ -2371,83 +2339,10 @@ body[dir="rtl"] .nav-paypal {
                         icon.textContent = isActive ? 'close' : 'menu';
                     }
                 });
-            }
-            
-            // زر Read Bio
-            if (readBioBtn) {
-                readBioBtn.addEventListener('click', function () {
-                    bioModal.classList.add('active');
-                    document.body.style.overflow = 'hidden';
-                });
-            }
-            
-            // إغلاق Modal
-            if (closeModal) {
-                closeModal.addEventListener('click', closeBioModal);
-            }
-            
-            if (closeModalBtn) {
-                closeModalBtn.addEventListener('click', closeBioModal);
-            }
-            
-            // إغلاق Modal عند النقر خارج المحتوى
-            if (bioModal) {
-                bioModal.addEventListener('click', function (e) {
-                    if (e.target === bioModal) {
-                        closeBioModal();
-                    }
-                });
-            }
-            
-            // إغلاق قائمة الموبايل عند النقر على رابط
-            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    if (this.id === 'mobileCartBtn' || this.getAttribute('onclick') === 'toggleAuth()') {
-                        return;
-                    }
-                    
-                    if (mobileMenu) {
-                        mobileMenu.classList.remove('active');
-                        mobileMenu.style.opacity = '0';
-                        mobileMenu.style.transform = 'translateY(-10px)';
-                        setTimeout(() => {
-                            mobileMenu.style.display = 'none';
-                        }, 300);
-                        
-                        if (mobileMenuBtn) {
-                            const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
-                            if (icon) {
-                                icon.textContent = 'menu';
-                            }
-                        }
-                    }
-                });
-            });
-            
-            // تأثيرات عند التمرير
-            window.addEventListener('scroll', handleScroll);
-            
-            // زر السلة
-            if (cartBtn) {
-                cartBtn.addEventListener('click', function() {
-                    showNotification('عرض محتويات السلة - هذه وظيفة تجريبية');
-                });
-            }
-            
-            if (mobileCartBtn) {
-                mobileCartBtn.addEventListener('click', function() {
-                    showNotification('عرض محتويات السلة (موبايل) - هذه وظيفة تجريبية');
-                });
-            }
-            
-            // إغلاق قائمة الموبايل عند النقر خارجها
-            document.addEventListener('click', function(event) {
-                if (mobileMenu && mobileMenuBtn && mobileMenu.classList.contains('active')) {
-                    const isClickInsideMenu = mobileMenu.contains(event.target);
-                    const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
-                    
-                    if (!isClickInsideMenu && !isClickOnMenuBtn) {
+                
+                // إغلاق القائمة عند النقر على رابط
+                document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', function() {
                         mobileMenu.classList.remove('active');
                         mobileMenu.style.opacity = '0';
                         mobileMenu.style.transform = 'translateY(-10px)';
@@ -2456,23 +2351,65 @@ body[dir="rtl"] .nav-paypal {
                         }, 300);
                         
                         const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
-                        if (icon) {
-                            icon.textContent = 'menu';
-                        }
-                    }
-                }
-            });
+                        if (icon) icon.textContent = 'menu';
+                    });
+                });
+            }
         }
 
-        function closeBioModal() {
+        function setupEventListeners() {
+            // إعداد Modal السيرة الذاتية
+            const readBioBtn = document.getElementById('readBioBtn');
+            const bioModal = document.getElementById('bioModal');
+            const closeModal = document.getElementById('closeModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            
+            if (readBioBtn) {
+                readBioBtn.addEventListener('click', function() {
+                    bioModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    bioModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function() {
+                    bioModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
             if (bioModal) {
-                bioModal.classList.remove('active');
-                document.body.style.overflow = 'auto';
+                bioModal.addEventListener('click', function(e) {
+                    if (e.target === bioModal) {
+                        bioModal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        }
+
+        function setupScrollIndicator() {
+            window.addEventListener('scroll', updateScrollProgress);
+        }
+
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scrollProgress');
+            if (scrollProgress) {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                scrollProgress.style.width = scrolled + '%';
             }
         }
 
         function initScrollAnimations() {
-            const sections = document.querySelectorAll('.section, .philosophy-section, .cta-section');
+            const sections = document.querySelectorAll('.section, .cta-section');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -2490,84 +2427,8 @@ body[dir="rtl"] .nav-paypal {
             });
         }
 
-        function setupScrollIndicator() {
-            window.addEventListener('scroll', updateScrollProgress);
-        }
-
-        function updateScrollProgress() {
-            if (scrollProgress) {
-                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (window.scrollY / windowHeight) * 100;
-                scrollProgress.style.width = scrolled + '%';
-            }
-        }
-
-        function handleScroll() {
-            const mainHeader = document.querySelector('header');
-            if (mainHeader) {
-                if (window.scrollY > 50) {
-                    mainHeader.classList.add('scrolled');
-                } else {
-                    mainHeader.classList.remove('scrolled');
-                }
-            }
-            
-            updateScrollProgress();
-        }
-
-        function updateCartCount() {
-            try {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-                
-                if (cartCount) {
-                    cartCount.textContent = totalItems;
-                }
-            } catch (error) {
-                console.error('Error updating cart count:', error);
-            }
-        }
-
-        function updateMobileCartCount() {
-            try {
-                const cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
-                
-                if (mobileCartCount) {
-                    mobileCartCount.textContent = totalItems;
-                }
-            } catch (error) {
-                console.error('Error updating mobile cart count:', error);
-            }
-        }
-
-        function updateAuthButtons() {
-            const isLoggedIn = localStorage.getItem('currentUser');
-            document.getElementById('authText').textContent = isLoggedIn ? 
-                (currentLang === 'ar' ? arabicTexts.logout : englishTexts.logout) : 
-                (currentLang === 'ar' ? arabicTexts.login : englishTexts.login);
-            document.getElementById('mobileAuthText').textContent = isLoggedIn ? 
-                (currentLang === 'ar' ? arabicTexts.logout : englishTexts.logout) : 
-                (currentLang === 'ar' ? arabicTexts.login : englishTexts.login);
-        }
-
-        function toggleAuth() {
-            if (localStorage.getItem('currentUser')) {
-                localStorage.removeItem('currentUser');
-                showNotification(currentLang === 'ar' ? 'تم تسجيل الخروج بنجاح' : 'Logged out successfully');
-                updateAuthButtons();
-            } else {
-                window.location.href = 'registar.html';
-            }
-        }
-
-        function setupReadMoreModals() {
-            // يمكن إضافة وظيفة قراءة المزيد إذا لزم الأمر
-        }
-
         function setupFAQ() {
             const faqItems = document.querySelectorAll('.faq-item');
-            
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 if (question) {
@@ -2577,20 +2438,67 @@ body[dir="rtl"] .nav-paypal {
                                 otherItem.classList.remove('active');
                             }
                         });
-                        
                         item.classList.toggle('active');
                     });
                 }
             });
         }
 
-        // إغلاق كل الـmodals عند الضغط على ESC
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: rgba(212, 175, 55, 0.9);
+                color: #000;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 600;
+                z-index: 10000;
+                transform: translateX(150%);
+                transition: transform 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                max-width: 300px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(212, 175, 55, 0.3);
+            `;
+            
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(150%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // استمع لتغييرات السلة
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'servicesCart') {
+                updateCartCount();
+            }
+        });
+
+        // إغلاق Modal عند الضغط على ESC
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
+                const bioModal = document.getElementById('bioModal');
                 if (bioModal && bioModal.classList.contains('active')) {
-                    closeBioModal();
+                    bioModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
                 
+                const mobileMenu = document.getElementById('mobileMenu');
                 if (mobileMenu && mobileMenu.classList.contains('active')) {
                     mobileMenu.classList.remove('active');
                     mobileMenu.style.opacity = '0';
@@ -2599,89 +2507,11 @@ body[dir="rtl"] .nav-paypal {
                         mobileMenu.style.display = 'none';
                     }, 300);
                     
-                    if (mobileMenuBtn) {
-                        const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
-                        if (icon) {
-                            icon.textContent = 'menu';
-                        }
-                    }
+                    const icon = document.getElementById('mobileMenuBtn').querySelector('.material-symbols-outlined');
+                    if (icon) icon.textContent = 'menu';
                 }
             }
         });
-
-        // تحديث عند تغيير السلة
-        window.addEventListener('storage', function(e) {
-            if (e.key === 'cart') {
-                updateCartCount();
-                updateMobileCartCount();
-            }
-        });
-
-        // تهيئة CSS للموبايل منيو إذا كان مفقوداً
-        function initMobileMenuStyles() {
-            if (!document.querySelector('#mobileMenuStyles')) {
-                const style = document.createElement('style');
-                style.id = 'mobileMenuStyles';
-                style.textContent = `
-                    .mobile-menu {
-                        display: none;
-                        position: fixed;
-                        top: 70px;
-                        left: 0;
-                        right: 0;
-                        background-color: #111111;
-                        border-bottom: 2px solid #D4AF37;
-                        padding: 20px;
-                        z-index: 9999;
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-                        opacity: 0;
-                        transform: translateY(-20px);
-                        transition: opacity 0.3s ease, transform 0.3s ease;
-                    }
-                    
-                    .mobile-menu.active {
-                        display: block;
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                    
-                    .mobile-nav {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 12px;
-                    }
-                    
-                    .mobile-nav-link {
-                        display: flex;
-                        align-items: center;
-                        padding: 15px 20px;
-                        color: white !important;
-                        text-decoration: none;
-                        border-radius: 10px;
-                        background: rgba(255, 255, 255, 0.05);
-                        border: 1px solid rgba(212, 175, 55, 0.3);
-                        font-size: 16px;
-                        font-weight: 500;
-                        transition: all 0.3s ease;
-                    }
-                    
-                    .mobile-nav-link:hover {
-                        background: rgba(212, 175, 55, 0.2);
-                        color: #D4AF37 !important;
-                        transform: translateX(5px);
-                    }
-                    
-                    .mobile-nav-link .material-symbols-outlined {
-                        margin-right: 12px;
-                        font-size: 20px;
-                    }
-                `;
-                document.head.appendChild(style);
-            }
-        }
-
-        // استدعاء تهيئة الأنماط
-        initMobileMenuStyles();
     </script>
 </body>
 </html>
