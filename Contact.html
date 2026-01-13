@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
-        /* ========== CSS VARIABLES ========== */
-
 @media (max-width: 767px) {
     footer {
         padding: 1.5rem 1rem 1rem;
@@ -1642,11 +1640,12 @@ body[dir="rtl"] .nav-paypal {
         <!-- شريط التنقل للديسكتوب -->
         <nav class="nav-desktop">
             <div class="nav-links">
-            <a class="nav-link" href="Home.html">Home</a>
-    <a class="nav-link" href="eTool Kits.html">eTool Kits</a>
-    <a class="nav-link" href="how it works.html">how it works</a>
-    <a class="nav-link" href="examples.html">examples</a>
-    <a class="nav-link" href="Contact.html">Contact</a>
+                <a class="nav-link" href="Home.html">Home</a>
+                <a class="nav-link" href="Services.html">Services</a>
+                <a class="nav-link" href="Shop.html">Shop</a>
+                <a class="nav-link" href="portofolio.html">Portfolio</a>
+                <a class="nav-link" href="About.html">About Us</a>
+                <a class="nav-link" href="Contact.html">Contact</a>
 
                 <button id="langToggle" class="lang-btn">
                     <span class="material-symbols-outlined">language</span>
@@ -1654,7 +1653,7 @@ body[dir="rtl"] .nav-paypal {
                 </button>
 
                 <!-- زر PayPal للديسكتوب -->
-                <a href="https://www.paypal.me/asmaalbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
                     Pay with PayPal
                 </a>
                 <!-- زر السلة للديسكتوب -->
@@ -1710,8 +1709,8 @@ body[dir="rtl"] .nav-paypal {
     <section class="hero" id="home">
         <div class="hero-bg"></div>
         <div class="container hero-content">
-            <h1 class="hero-title">WHO ARE WE  <span class="highlight"></span></h1>
-            <p class="hero-subtitle">Brands Tool Kit helps businesses look professional without hiring a full agency.  We design ready-to-use brand assets so you can launch, promote, and grow faster.  </p>
+            <h1 class="hero-title">Connect With <span class="highlight">Architecture Experts</span></h1>
+            <p class="hero-subtitle">Let’s Build Something Exceptional Together. Whether you need help with renders, diagrams, 3D modelling, portfolio development, or full project support—I'm here to assist you with professional, high-quality guidance delivered fast and affordably.</p>
         </div>
     </section>
 
@@ -1767,8 +1766,73 @@ body[dir="rtl"] .nav-paypal {
     </section>
 
     <!-- Calendar Booking Section -->
-  
+    <section class="calendar-section" id="calendar-booking">
+        <div class="container">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div>
+                        <h3 class="calendar-title">Schedule Your Consultation</h3>
+                        <p class="calendar-subtitle">Select a date and time for your architectural consultation session with our experts.</p>
+                    </div>
+                    <div id="selected-date-display">
+                        <strong>Selected:</strong> <span id="display-date">No date selected</span>
+                    </div>
+                </div>
 
+                <div class="calendar-content">
+                    <div class="calendar-widget">
+                        <input type="text" id="calendar-input" placeholder="Select a date" style="display: none;">
+                        <div id="calendar"></div>
+                    </div>
+
+                    <div class="booking-form">
+                        <div class="form-group">
+                            <label for="consultant">Select Consultant</label>
+                            <select id="consultant">
+                                <option value="">Choose an expert</option>
+                                <option value="john">ARCHITECT</option>
+                                <option value="sarah">INTERIOR ARCHITECT</option>
+                                <option value="michael">VISAULISERS</option>
+                                <option value="elena">GENERAL</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="meeting-type">Meeting Type</label>
+                            <select id="meeting-type">
+                                <option value="">Select meeting type</option>
+                                <option value="initial">Initial Consultation (30 min)</option>
+                                <option value="design">Design Review (60 min)</option>
+                                <option value="technical">Technical Consultation (45 min)</option>
+                                <option value="project">Project Planning (90 min)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Available Time Slots</label>
+                            <div class="time-slots" id="time-slots">
+                                <!-- Time slots will be generated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="booking-name" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="booking-email" placeholder="Enter your email">
+                        </div>
+
+                        <button class="book-btn" id="confirm-booking">
+                            <i class="far fa-calendar-check"></i> Confirm Appointment
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Email Form Section -->
     <section class="email-section" id="email-form">
@@ -2433,8 +2497,8 @@ body[dir="rtl"] .nav-paypal {
      cart: "Cart",
 
      // Hero Section
-     heroTitle: "WHO ARE WE  ",
-     heroSubtitle: "Brands Tool Kit helps businesses look professional without hiring a full agency.  We design ready-to-use brand assets so you can launch, promote, and grow faster.  ",
+     heroTitle: "Connect With Architecture Experts",
+     heroSubtitle: "Connect With Architecture Experts Get Support, Book Sessions, or Ask Us Anything for free We reply within 24 hours",
 
      // Contact Section
      contactExperts: "Contact Our Experts",

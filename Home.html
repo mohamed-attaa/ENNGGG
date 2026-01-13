@@ -3175,16 +3175,12 @@ body[dir="rtl"] .nav-paypal {
 
             <nav class="nav-desktop">
                 <div class="nav-links">
-                <!-- في قسم nav-desktop -->
-<div class="nav-links">
-    <a class="nav-link" href="Home.html" id="desktopHomeLink">Home</a>
-    <a class="nav-link" href="eTool Kits.html" id="desktopServicesLink">eTool Kits</a>
-    <a class="nav-link" href="how it works.html" id="desktopWalletLink">how it works</a>
-    <a class="nav-link" href="examples.html" id="desktopAboutLink">examples</a>
-    <a class="nav-link" href="Contact.html" id="desktopContactLink">Contact</a>
-    
-    <!-- باقي العناصر... -->
-</div>
+                    <a class="nav-link" href="Home.html" id="homeLink">Home</a>
+                    <a class="nav-link" href="Services.html" id="servicesLink">Services</a>
+                    <a class="nav-link" href="Shop.html" id="shopLink">Shop</a>
+                    <a class="nav-link" href="portofolio.html" id="walletLink">Portfolio</a>
+                    <a class="nav-link" href="About.html" id="aboutLink">About Us</a>
+                    <a class="nav-link" href="Contact.html" id="contactLink">Contact</a>
                     <!-- زر السلة الوحيد للديسكتوب -->
                     <button id="langToggle" class="lang-btn">
                         <span class="material-symbols-outlined">language</span>
@@ -3192,7 +3188,7 @@ body[dir="rtl"] .nav-paypal {
                     </button>
                     <!-- زر PayPal في الديسكتوب -->
                     <!-- زر PayPal للديسكتوب -->
-                    <a href="https://www.paypal.me/asmaalbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
                         Pay with PayPal
                     </a>
 
@@ -3226,9 +3222,10 @@ body[dir="rtl"] .nav-paypal {
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-nav">
                 <a class="mobile-nav-link" href="Home.html" id="mobileHomeLink">Home</a>
-                <a class="mobile-nav-link" href="eTool Kits.html" id="mobileServicesLink">eTool Kits</a>
-                <a class="mobile-nav-link" href="how it works.html" id="mobileWalletLink">how it works</a>
-                <a class="mobile-nav-link" href="examples.html" id="mobileAboutLink">examples</a>
+                <a class="mobile-nav-link" href="Services.html" id="mobileServicesLink">Services</a>
+                <a class="mobile-nav-link" href="Shop.html" id="mobileShopLink">Shop</a>
+                <a class="mobile-nav-link" href="portofolio.html" id="mobileWalletLink">Portfolio</a>
+                <a class="mobile-nav-link" href="About.html" id="mobileAboutLink">About Us</a>
                 <a class="mobile-nav-link" href="Contact.html" id="mobileContactLink">Contact</a>
                 <button class="mobile-nav-link" id="mobileLangToggle">
                     <button class="mobile-nav-link" id="mobileLangToggle">
@@ -3237,7 +3234,7 @@ body[dir="rtl"] .nav-paypal {
                     </button>
                     <!-- زر PayPal في الموبايل -->
                     <!-- زر PayPal للموبايل -->
-                    <a href="https://www.paypal.me/asmaalbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.paypal.me/AsmaaAlbaz" class="nav-paypal" target="_blank" rel="noopener noreferrer">
                         Pay with PayPal
                     </a>
 
@@ -3643,10 +3640,11 @@ body[dir="rtl"] .nav-paypal {
             <div class="footer-column">
                 <h3 class="footer-title">Sitemap</h3>
                 <div class="footer-links">
-                    <a class="footer-link" href="eTool Kits.html">eTool Kits</a>
-                    <a class="footer-link" href="examples.html">examples</a>
-                    <a class="footer-link" href="how it works.html">how it works</a>
+                    <a class="footer-link" href="Services.html">Services</a>
+                    <a class="footer-link" href="Shop.html">Shop</a>
+                    <a class="footer-link" href="About.html">About Us</a>
                     <a class="footer-link" href="Contact.html">Contact</a>
+                    <a class="footer-link" href="portofolio.html">portofolio</a>
                 </div>
             </div>
 
@@ -4324,53 +4322,55 @@ body[dir="rtl"] .nav-paypal {
            const englishTexts = {
                // Navigation
                home: "Home",
-               services: "eTooL Kits",
-               portfolio: "how it works ",
-               about: "examples",
+               services: "Services",
+               shop: "Shop",
+               portfolio: "Portfolio",
+               about: "About Us",
                contact: "Contact",
                login: "Login",
                logout: "Logout",
                cart: "Cart",
 
                // Hero Slider
-               slide1_title: "One-Stop Shop for Branding, Design & Websites  ",
+               slide1_title: "We Help You Present with Confidence",
                slide1_desc: "Supporting line: Clear, competition-ready boards that communicate your ideas fast.",
-               slide2_title: "“Complete Custom Branding — Logos, Websites, Presentations & Banners in 24–48 Hours”  ",
+               slide2_title: "We Support You with Reliable, High-Quality Renders",
                slide2_desc: "Supporting line: Interior and exterior visuals that reflect your design intent.",
-               slide3_title: " Everything Your Brand Needs — In One Toolkit   ",
+               slide3_title: "We Help You Deliver Clean, Professional Drawings",
                slide3_desc: "Supporting line: Plans, sections, and elevations prepared for review and approval.",
-               slide4_title: "“Your Full Brand, Fast: Custom Logos, Websites, Presentations & Banners” “Launch Your Brand Tomorrow — Fully Personalized & Ready-to-Use”  ",
+               slide4_title: "We Help You Explain Your Design Clearly",
                slide4_desc: "Built by a London-based architect skilled in narrative design and mentoring",
                contactMe: "Contact me",
 
                // Features Section
-               coreServices: " Get Your Brand Kit View Packages  ",
-               archDrafting: "Logo  + Brand guide  ",
+               coreServices: "what we help with",
+               coreDesc: "From initial concept to final construction, we provide a comprehensive suite of architectural services tailored to bring your vision to life.",
+               archDrafting: "Architectural Drafting & Floor Plans",
                archDraftingDesc: "Professional CAD drawings with accurate details and clean layouts.",
-               softwareTutoring: "social posts  ",
+               softwareTutoring: "Software Tutoring",
                softwareTutoringDesc: "Learn AutoCAD, Revit, Rhino, V-Ray and more with personalized sessions.",
-               modelingRendering: "banners Flyer / menu / price list  ",
+               modelingRendering: "3D Modelling & Rendering (Revit / Rhino)",
                modelingRenderingDesc: "High-quality 3D modeling for academic and professional work.",
-               presentationBoards: "website development  ",
+               presentationBoards: "Board & Presentation Storyboards",
                presentationBoardsDesc: "Clean and impactful presentation boards for juries & submissions.",
 
                // Specializations Section
                practicalSupport: "Practical architectural support for students and small practices",
-               card1_title: "Who We Work With  ",
-               card1_desc: "BrandsToolkit supports: Small businesses and startups Online brands and entrepreneurs Service-based businesses Personal brands and creators Our clients want professional visuals without agency-level costs or delays.  ",
-               card4_title: "Our Approach  ",
-               card4_desc: "Clean, modern, and professional design Clear pricing and defined deliverables Fast communication and delivery Designs built for real business use BrandsToolkit is not a design showcase. It operates as a service-based branding business focused on clarity, speed, and value.  ",
-               card5_title: "for you  ",
-               card5_desc: " We offer complete branding and digital design services that can be purchased directly online. Each service has a defined scope, clear deliverables, and fast turnaround. Branding & Identity Design Logo design Visual identity systems Brand guidelines for consistent use Marketing & Promotional Design Posters and flyers Banners for online and print use Campaign visuals Social Media Design Social media posts and templates Profile ,  ",
+               card1_title: "AutoCAD and Revit help",
+               card1_desc: "Technical. Precise. Buildable.This specialization is strictly technical drawing. Includes Architectural Drafting & Floor Plans CAD Drawings Plans, Sections, Elevations Technical & Construction Drawings Drawing coordination & consistency",
+               card4_title: "3D Modeling services",
+               card4_desc: "D Architectural Documentation Technical. Precise. Buildable. This specialization is strictly technical drawing. Includes Architectural Drafting & Floor Plans CAD Drawings (Plans, Sections, Elevations) Technical & Construction Drawings Drawing coordination & consistency",
+               card5_title: "Visualisations",
+               card5_desc: "Architectural Communication & Presentation Clarity. Narrative. Impact.This is where boards and layouts belong.Includes Board & Presentation Storyboards Layouts for submissions, portfolios, and juries Visual storytelling & hierarchy Diagramming & graphic consistency Presentation strategy ",
 
                // How It Works Section
                howItWorks: "How It Works",
                step1: "Step 1",
-               step1_title: "Chooes your tookit",
+               step1_title: "Send us your task or file",
                step2: "Step 2",
-               step2_title: "Tell us about your busines",
+               step2_title: "We'll tell you how we can help",
                step3: "Step 3",
-               step3_title: "Receive your brand assets in days Short.Clear. No fluff.  ",
+               step3_title: "Get clear, practical support",
 
                // Testimonials
                clientVoices: "Client Voices",
@@ -4412,11 +4412,12 @@ body[dir="rtl"] .nav-paypal {
            // الترجمة العربية
            const arabicTexts = {
                // Navigation
-               homeLink: "الرئيسية",
-        servicesLink: "الأدوات الإلكترونية",
-        walletLink: "كيف يعمل",
-        aboutLink: "الأمثلة",
-        contactLink: "اتصل بنا",
+               home: "الرئيسية",
+               services: "الخدمات",
+               shop: "المتجر",
+               portfolio: "الأعمال",
+               about: "من نحن",
+               contact: "اتصل بنا",
                login: "تسجيل الدخول",
                logout: "تسجيل الخروج",
                cart: "السلة",
@@ -5089,7 +5090,7 @@ body[dir="rtl"] .nav-paypal {
                paypalBtn.addEventListener('click', function() {
                    // افتح رابط PayPal في نافذة جديدة
                    window.open(
-                       'https://www.paypal.me/asmaalbaz',
+                       'https://www.paypal.me/AsmaaAlbaz',
                        '_blank',
                        'noopener,noreferrer'
                    );
