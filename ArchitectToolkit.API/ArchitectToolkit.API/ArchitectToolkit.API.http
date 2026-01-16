@@ -1,0 +1,6 @@
+@ArchitectToolkit.API_HostAddress = http://localhost:5027
+
+GET {{ArchitectToolkit.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

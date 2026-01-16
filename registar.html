@@ -905,56 +905,44 @@
         }
 
         // Register user function
-        function registerUser() {
-            // Simulate API delay
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    // Get existing users from localStorage
-                    const users = JSON.parse(localStorage.getItem('users') || '[]');
+        // Register user function (API VERSION)
+async function registerUser() {
+    try {
+        const response = await fetch('https://localhost:7179/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                fullName: usernameInput.value.trim(),
+                email: emailInput.value.trim(),
+                password: passwordInput.value.trim()
+            })
+        });
 
-                    // Check if email already exists
-                    const emailExists = users.some(user => user.email === emailInput.value.trim());
-                    if (emailExists) {
-                        showMessage(errorMsg, 'Email already registered');
-                        resolve(false);
-                        return;
-                    }
-
-                    // Check if username already exists
-                    const usernameExists = users.some(user => user.username === usernameInput.value.trim());
-                    if (usernameExists) {
-                        showMessage(errorMsg, 'Username already taken');
-                        resolve(false);
-                        return;
-                    }
-
-                    // Create user object
-                    const user = {
-                        id: Date.now(),
-                        username: usernameInput.value.trim(),
-                        email: emailInput.value.trim(),
-                        password: btoa(passwordInput.value.trim()), // Simple encoding
-                        createdAt: new Date().toISOString(),
-                        lastLogin: null
-                    };
-
-                    // Save user
-                    users.push(user);
-                    localStorage.setItem('users', JSON.stringify(users));
-
-                    // Save current session
-                    localStorage.setItem('currentUser', JSON.stringify({
-                        username: user.username,
-                        email: user.email
-                    }));
-
-                    // Remove guest session if exists
-                    localStorage.removeItem('guestSession');
-
-                    resolve(true);
-                }, 1500);
-            });
+        if (!response.ok) {
+            const errorText = await response.text();
+            showMessage(errorMsg, errorText || 'Registration failed');
+            return false;
         }
+
+        // Save current session (optional)
+        localStorage.setItem('currentUser', JSON.stringify({
+            username: usernameInput.value.trim(),
+            email: emailInput.value.trim()
+        }));
+
+        // Remove guest session if exists
+        localStorage.removeItem('guestSession');
+
+        return true;
+
+    } catch (error) {
+        showMessage(errorMsg, 'Server error. Please try again.');
+        return false;
+    }
+}
+
 
         // Form submission
         registerForm.addEventListener('submit', async function (e) {
