@@ -5,7 +5,7 @@ const servicesData = {
     1: {
         id: 1,
         title: "Rendering & Presentation Assets",
-        price: 0,
+        price: 50,
         description: "Transform your architectural concepts into compelling visual narratives. We create photorealistic renders that tell the story of your design, perfect for presentations and portfolio enhancement.",
         image: "./img/Orla-by-OMNIYAT-Amenities-1024x569 (1).jpg",
         features: [
@@ -22,7 +22,7 @@ const servicesData = {
     2: {
         id: 2,
         title: "3D Models & Blocks",
-        price: 0,
+        price: 50,
         description: "Professional 3D modeling services using industry-standard software like Revit, Rhino, and AutoCAD. We deliver clean, organized models with export-ready files for your architectural projects.",
         image: "/img/help.jpeg",
         features: [
@@ -39,7 +39,7 @@ const servicesData = {
     3: {
         id: 3,
         title: "Full Project Assistance",
-        price: 0,
+        price: 50,
         description: "End-to-end project support from initial concept through design development to final presentation. We provide comprehensive assistance including diagrams, narrative development, and presentation layouts.",
         image: "/img/getCroppedImage (2).jpg",
         features: [
@@ -55,7 +55,7 @@ const servicesData = {
     4: {
         id: 4,
         title: "Tutoring & Coaching",
-        price: 0,
+        price: 50,
         description: "Personalized one-on-one tutoring and coaching sessions for architecture students and professionals. We help with portfolio reviews, interview preparation, and skill development in design software.",
         image: "/img/tutoring.jpeg",
         features: [
@@ -72,7 +72,7 @@ const servicesData = {
     5: {
         id: 5,
         title: "Build‑Your‑Own Order",
-        price: 0,
+        price: 50,
         description: "Customize your architectural service package with our intuitive shop interface. Select exactly what you need from our modular service offerings to create a personalized solution for your project.",
         image: "/img/getCroppedImage (4).jpg",
         features: [
@@ -89,7 +89,7 @@ const servicesData = {
     6: {
         id: 6,
         title: "Portfolio Tools",
-        price: 0,
+        price: 50,
         description: "Create a stunning professional portfolio that showcases your architectural work effectively. We design visually compelling portfolios tailored for job applications, university admissions, or client presentations.",
         image: "/img/postar.jpeg",
         features: [
@@ -644,7 +644,7 @@ function clearCart() {
 function checkoutToPayPal() {
     // فتح PayPal مباشرة بدون أي تأكيد أو dialog
     window.open(
-        'https://www.paypal.me/AsmaaAlbaz', 
+        'https://paypal.me/asmaalbaz', 
         '_blank', 
         'noopener,noreferrer'
     );
